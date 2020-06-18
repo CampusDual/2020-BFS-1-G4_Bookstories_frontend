@@ -1,6 +1,6 @@
-<!--<div fxFlex>-->
-  <o-table fxFlex attr="booksTable" service="BOOKS" entity="book" keys="BOOK_ID" 
-    columns="BOOK_ID;BOOK_TITLE;LANGUAGE_IDLANGUAGE"
+<div fxFlex>
+  <o-table fxFlex attr="booksTable" service="books" entity="book" keys="BOOK_ID" 
+    columns="BOOK_ID;BOOK_TITLE;LANGUAGE_IDLANGUAGE" query-on-init="true"
     visible-columns="BOOK_ID;BOOK_TITLE;LANGUAGE_IDLANGUAGE" query-rows="20">
     <o-table-column attr="BOOK_TITLE" title="BOOK_TITLE" width="100px">
 
@@ -10,4 +10,4 @@
     <o-table-column attr="BOOK_ID" title="BOOK_ID" width="100px"></o-table-column>
     
   </o-table>
- <!-- </div>-->
+ </div>
