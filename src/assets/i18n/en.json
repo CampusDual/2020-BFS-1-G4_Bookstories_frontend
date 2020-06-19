@@ -17,6 +17,7 @@
   "BOOKS" : "Books",
   "BOOK_TITLE": "Book Title",
   "LANGUAGE_IDLANGUAGE" :"Language",
+  "LANGUAGE_NAME": "Language",
   "BOOK_ID": "Id Book",
   "NAME": "Name"
 }
