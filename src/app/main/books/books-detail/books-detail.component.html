@@ -1,0 +1,29 @@
+<o-form service="books" entity="bookdetails" keys="BOOK_ID"  header-actions="" show-header-navigation="no" editable-detail="no">
+    <o-row title="{{'BOOK'}}">
+      <o-text-input class="input-padding" attr="BOOK_TITLE" title="BOOK_TITLE" read-only="true" fxFlex="40"></o-text-input>      
+    </o-row>
+    <o-row>
+    <o-column>
+      <o-image id="COVER_PAGE" attr="COVER_PAGE" empty-image="assets/images/no-image.png" sql-type="OTHER" read-only="true" show-controls="false" height="240px" width="240px"></o-image>
+    </o-column>
+    <o-column>
+        <o-row>
+          <o-integer-input class="input-padding" attr="BOOK_ID" title="BOOK_ID" read-only="true" width="100px"></o-integer-input>      
+        </o-row>
+        <o-row>
+          <o-text-input class="input-padding" attr="NAME" title="AUTHOR" read-only="true" width="200px"></o-text-input>      
+        </o-row>
+        <o-row>
+          <o-text-input class="input-padding" attr="LANGUAGE_NAME" title="LANGUAGE" read-only="true" width="200px"></o-text-input>      
+        </o-row>
+    </o-column>
+    <o-column>
+      <o-row>
+        <o-button attr="raised" type="RAISED" label="LIBRARY" icon="" layout-padding></o-button>
+      </o-row>
+      <o-row>
+        <o-button attr="raised" type="RAISED" label="WISHLIST" layout-padding></o-button>
+      </o-row>
+  </o-column>
+  </o-row>
+</o-form>

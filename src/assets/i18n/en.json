@@ -19,5 +19,9 @@
   "LANGUAGE_IDLANGUAGE" :"Language",
   "LANGUAGE_NAME": "Language",
   "BOOK_ID": "Id Book",
-  "NAME": "Name"
+  "NAME": "Name",
+  "LIBRARY": "Add to Library",
+  "WISHLIST": "Add to WishList",
+  "AUTHOR": "Author",
+  "BOOK": "Book"
 }
