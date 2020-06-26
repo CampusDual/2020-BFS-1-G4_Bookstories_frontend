@@ -12,4 +12,11 @@ export class BooksHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+    openDetail(item: any) {
+        
+    }
+
+  getImageSrc(EMPLOYEEPHOTO: any) {
+    return 'data:image/png;base64,'+EMPLOYEEPHOTO;
+  }
 }
