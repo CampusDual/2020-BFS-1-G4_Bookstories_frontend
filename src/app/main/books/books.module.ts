@@ -9,7 +9,7 @@ import { BooksMiniatureComponent } from './books-miniature/books-miniature.compo
   imports: [
     CommonModule,
     OntimizeWebModule, 
-    BooksRoutingModule
+    BooksRoutingModule,
   ],
   declarations: [
     BooksHomeComponent,
