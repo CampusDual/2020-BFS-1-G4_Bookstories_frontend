@@ -11,9 +11,6 @@
           <o-integer-input class="input-padding" attr="BOOK_ID" title="BOOK_ID" read-only="true" width="100px"></o-integer-input>      
         </o-row>
         <o-row>
-          <o-text-input class="input-padding" attr="NAME" title="AUTHOR" read-only="true" width="200px"></o-text-input>      
-        </o-row>
-        <o-row>
           <o-text-input class="input-padding" attr="LANGUAGE_NAME" title="LANGUAGE" read-only="true" width="200px"></o-text-input>      
         </o-row>
     </o-column>
@@ -25,5 +22,23 @@
         <o-button attr="raised" type="RAISED" label="WISHLIST" layout-padding></o-button>
       </o-row>
   </o-column>
+  </o-row>
+  <o-row>
+    <o-list #list attr="bookauthors" service="books" entity="bookauthors" keys="BOOK_ID" parent-keys="BOOK_ID"
+  columns="NAME" show-controls="false" title="AUTHOR">
+  <o-list-item *ngFor="let row of list.dataArray">
+    <o-list-item-text #item title="{{ row.NAME }}">
+    </o-list-item-text>
+  </o-list-item>
+</o-list>
+  </o-row>
+  <o-row title="{{'REVIEWS'}}">
+    <o-list #listrev attr="bookreviews" service="books" entity="bookreviews" keys="books_book_id" parent-keys="BOOK_ID"
+  columns="TUSERS_USER;COMMENT" show-controls="false" title="REVIEWS">
+  <o-list-item *ngFor="let row of listrev.dataArray">
+    <o-list-item-text #itemrev title="{{ row.TUSERS_USER }}" secondary-text="{{ row.COMMENT }}"  width="100px">
+    </o-list-item-text>
+  </o-list-item>
+</o-list>
   </o-row>
 </o-form>
