@@ -13,15 +13,16 @@
 <div fxFlex>
 <o-grid #grid attr="booksGrid" service="books" entity="bookdetails"
         columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;NAME;COVER_PAGE"
-        orderable="yes" quick-filter="yes" grid-item-height="1:2" sortable-columns="BOOK_TITLE;LANGUAGE_NAME;NAME"
+        orderable="yes" quick-filter="yes" grid-item-height="300" sortable-columns="BOOK_TITLE;LANGUAGE_NAME;NAME"
         keys="BOOK_ID" pageable="no" query-rows="16">
-  <o-grid-item *ngFor="let item of grid.dataArray">
-    <o-column layout-padding class="container-item">
-      <img [src]="item.COVER_PAGE" style="margin-top:8px" width="200" height="200">
+  <o-grid-item *ngFor="let item of grid.dataArray" >
+   <!-- <o-column layout-padding> -->
+ <!--     <img [src]="item.COVER_PAGE" style="margin-top:8px" width="200" height="200">
       <h4> {{item.BOOK_TITLE}} </h4>
         <div class="author"> {{item.NAME}} </div>
-        <div class="language">{{item.LANGUAGE_NAME}} </div>
-      </o-column>
+        <div class="language">{{item.LANGUAGE_NAME}} </div> -->
+        <app-books-miniature [bookitem] = item></app-books-miniature>  
+    <!--  </o-column> -->
   </o-grid-item>
 </o-grid>
 </div>

@@ -4,6 +4,7 @@ import { OntimizeWebModule } from "ontimize-web-ngx";
 import { BooksRoutingModule } from './books-routing.module';
 import { BooksHomeComponent} from './books-home/books-home.component'
 import { BooksDetailComponent } from './books-detail/books-detail.component';
+import { BooksMiniatureComponent } from './books-miniature/books-miniature.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -12,7 +13,8 @@ import { BooksDetailComponent } from './books-detail/books-detail.component';
   ],
   declarations: [
     BooksHomeComponent,
-    BooksDetailComponent
+    BooksDetailComponent,
+    BooksMiniatureComponent
   ]
 })
 export class BooksModule { }
