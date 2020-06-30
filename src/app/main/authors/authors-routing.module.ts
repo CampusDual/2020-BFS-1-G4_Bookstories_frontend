@@ -8,7 +8,7 @@ const routes: Routes = [{
   component: AuthorsHomeComponent
 },
 {
-  path : ':ID_AUTHOR',
+  path : ':id_author',
   component: AuthorsDetailComponent
 }];
 

@@ -1,8 +1,8 @@
-<o-form-layout-manager separator=" " label-columns="ANID">
-  <div fxFlex>
+<div fxFlex>
    <o-table fxFlex attr="authorsTable" service="authors" entity="author" keys="id_author" 
-     columns="id_author"
-     visible-columns="id_author" query-rows="20">
+     columns="id_author;REAL_NAME"
+     visible-columns="id_author;REAL_NAME" query-rows="20" show-controls="false">
+     <o-table-column attr="id_author" title="ID_AUTHOR" type="text"></o-table-column>
+     <o-table-column attr="REAL_NAME" title="REAL_NAME" type="text"></o-table-column>
    </o-table>
-  </div>
- </o-form-layout-manager>
+</div>

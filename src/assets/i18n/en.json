@@ -24,5 +24,10 @@
   "WISHLIST": "Add to WishList",
   "AUTHOR": "Author",
   "BOOK": "Book",
-  "REVIEWS": "Reviews"
+  "REVIEWS": "Reviews",
+  "REAL_NAME": "Real Name",
+  "AUTHORS": "Authors",
+  "ID_AUTHOR": "Author ID",
+  "NACIONALITY": "Nationality"
+
 }

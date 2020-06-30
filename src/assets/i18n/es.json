@@ -24,5 +24,9 @@
   "WISHLIST": "Añadir a lista de deseos",
   "AUTHOR": "Autor",
   "BOOK": "Libro",
-  "REVIEWS": "Reseñas"
+  "REVIEWS": "Reseñas",
+  "REAL_NAME": "Nombre Real",
+  "AUTHORS": "Autores",
+  "ID_AUTHOR": "ID del autor",
+  "NACIONALITY": "Nacionalidad"
 }
