@@ -1,24 +1,29 @@
-.bookminiature{
-    width: 50%;
-    align-content: center;    
+.card{
+   
     background-color: aqua;
-    max-width: 100%;
+   
 }
-.imag{
+img.bookImage{ width: 150px; height: 150px;;;
+    
+
+}
+div.booksLabel{
     align-items: center;
 
 }
-.title{
-    max-width: 50%;
+div.bookTitle{
+    max-width: 150px;
     text-align: center;
     font-weight: bold;
 
 }
-.author {
+div.author {
+
     text-align: center;
+    
     font-weight: bold;
   }
-  .languagea {
+div.language {
     text-align: center;
     color: #3498db;
   }

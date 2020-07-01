@@ -4,14 +4,24 @@ import { SharedModule } from '../shared/shared.module';
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
 
+import { BooksMiniatureComponent } from '../shared/books-miniature/books-miniature.component';
+
+
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    MainRoutingModule
+    MainRoutingModule,
+    
+    
   ],
   declarations: [
-    MainComponent
-  ]
+    MainComponent,
+    
+    
+    
+    
+    
+  ],exports: [BooksMiniatureComponent]
 })
 export class MainModule { }

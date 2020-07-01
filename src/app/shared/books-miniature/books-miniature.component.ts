@@ -1,5 +1,6 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { BookModel } from './book.model';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-books-miniature',
@@ -17,7 +18,7 @@ export class BooksMiniatureComponent implements OnInit {
 
   ngOnInit() {
     
-    this.book = new BookModel(this.bookitem)
+    this.book = new BookModel(this.bookitem )
   }
 
 }
