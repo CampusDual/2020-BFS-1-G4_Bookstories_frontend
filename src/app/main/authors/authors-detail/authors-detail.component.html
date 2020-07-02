@@ -18,7 +18,7 @@
 </o-row>
   <o-row>
     <o-list #list attr="authorbooks" service="authors" entity="authorbooks" keys="id_author" parent-keys="id_author"
-  columns="BOOK_TITLE" show-controls="false" title="BOOKS" detail-form-route="/main/books">
+  columns="BOOK_TITLE" refresh-button="false" quick-filter="false" delete-button="false" title="BOOKS" detail-form-route="/main/books">
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-text #item title="{{ row.BOOK_TITLE }}">
     </o-list-item-text>

@@ -25,7 +25,7 @@
   </o-row>
   <o-row>
     <o-list #list attr="bookauthors" service="books" entity="bookauthors" keys="BOOK_ID" parent-keys="BOOK_ID"
-  columns="NAME" show-controls="false" title="AUTHOR" detail-form-route="/main/authors">
+  columns="NAME" controls="false" title="AUTHOR" detail-form-route="/main/authors">
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-text #item title="{{ row.NAME }}">
     </o-list-item-text>
@@ -34,9 +34,9 @@
   </o-row>
   <o-row title="{{'REVIEWS'}}">
     <o-list #listrev attr="bookreviews" service="books" entity="bookreviews" keys="books_book_id" parent-keys="BOOK_ID"
-  columns="TUSERS_USER;COMMENT" show-controls="false" title="REVIEWS">
+  columns="TUSERS_USER;COMMENT;VALUE" controls="false" title="REVIEWS">
   <o-list-item *ngFor="let row of listrev.dataArray">
-    <o-list-item-text #itemrev title="{{ row.TUSERS_USER }}" secondary-text="{{ row.COMMENT }}"  width="100px">
+    <o-list-item-text #itemrev title="{{ row.TUSERS_USER }}" primary-text="{{ row.VALUE }}" secondary-text="{{ row.COMMENT }}"  width="100px">
     </o-list-item-text>
   </o-list-item>
 </o-list>
