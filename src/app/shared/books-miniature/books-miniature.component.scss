@@ -1,10 +1,9 @@
 .card{
    
-    background-color: aqua;
+    background-color: darkgray;
    
 }
-img.bookImage{ 
-   resize: both;
+img.bookImage{ width: 150px; height: 150px;
     
 
 }
@@ -27,4 +26,11 @@ div.author {
 div.language {
     text-align: center;
     color: #3498db;
+  }
+
+  .card-img-low {
+
+    width: 100%;
+    height: 100%;
+
   }
