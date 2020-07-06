@@ -32,13 +32,23 @@
   </o-list-item>
 </o-list>
   </o-row>
+  <o-row title="{{'WRITE_REVIEW'}}">
+    <o-form service="REVIEWS" entity="review" keys="review_id" parent-keys="book_id">
+      <o-integer-input class="input-padding" attr="tusers_user" title="tusers_user" read-only="false" width="100px"></o-integer-input>
+      <o-text-input class="input-padding" attr="comment" title="comment" read-only="false" width="100px"></o-text-input>
+      <o-slider attr="slider-editable"  read-only="no" thumb-label="true"  tickInterval="1" max="5"></o-slider>
+      <o-integer-input class="input-padding" attr="books_book_id" title="books_book_id" read-only="false" width="100px"></o-integer-input>
+    </o-form>
+  </o-row>
   <o-row title="{{'REVIEWS'}}">
     <o-list #listrev attr="bookreviews" service="books" entity="bookreviews" keys="books_book_id" parent-keys="BOOK_ID"
   columns="TUSERS_USER;COMMENT;VALUE" controls="false" title="REVIEWS">
-  <o-list-item *ngFor="let row of listrev.dataArray">
-    <o-list-item-text #itemrev title="{{ row.TUSERS_USER }}" primary-text="{{ row.VALUE }}" secondary-text="{{ row.COMMENT }}"  width="100px">
-    </o-list-item-text>
-  </o-list-item>
+  <div *ngFor="let row of listrev.dataArray">
+    <h5 class="card-title"> {{row.TUSERS_USER}} </h5>
+    <app-star-rating [bookrating]="row.VALUE" ></app-star-rating>
+    <h6 class="card-text">{{row.COMMENT}} </h6>
+    <br>
+  </div>
 </o-list>
   </o-row>
 </o-form>

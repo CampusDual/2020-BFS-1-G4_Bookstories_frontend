@@ -4,5 +4,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'authors': {
     'path': '/AUTHORS'
+  },
+  'reviews': {
+    'path': '/REVIEWS'
   }
 };
