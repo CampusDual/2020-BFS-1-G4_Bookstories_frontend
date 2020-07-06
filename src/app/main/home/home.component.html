@@ -10,7 +10,7 @@
         columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" cols="5"
         orderable="no" quick-filter="no" grid-item-height="20em"  gutter-size="0.1em"   query-rows="5"     keys="BOOK_ID" pageable="no" >
   <o-grid-item *ngFor="let item of grid.dataArray;let ind = index" >
-    <o-row layout-padding class="row"> 
+    <o-column layout-padding > 
  <!--     <img [src]="item.COVER_PAGE" style="margin-top:8px" width="200" height="200">
       <h4> {{item.BOOK_TITLE}} </h4>
         <div class="author"> {{item.NAME}} </div>
@@ -18,7 +18,7 @@
         <div class="col-sm-5" *ngIf="ind< 5">
          <app-books-miniature [bookitem] = item></app-books-miniature>  
         </div>
-     </o-row>
+    </o-column>
   </o-grid-item>
 </o-grid>
 
