@@ -3,17 +3,15 @@
   width: 20vw;
   height: 90vh;
   background-color: #0D2A1A;
-  background-image: linear-gradient(135deg, #0D2A1A, #5c615c);
-  margin-top: 10%;
+  background-image: linear-gradient(165deg, #0D2A1A, #5c615c);
 }
 
 .img-fluid{
   object-fit: scale-down;
-  padding-top: 25%;
+  margin-top: 42%;
 }
 
 .card-body{
-  padding-top: 5%;
   justify-content: center;
   text-justify: auto;
 }
@@ -29,9 +27,5 @@
 .card-text{
   text-align: right;
   color: #0D2A1A;
-  padding-top: 8%;
 }
 
-.stars{
-  align-self: center;
-}

@@ -118,15 +118,15 @@
         cols="4"
         orderable="yes"
         quick-filter="yes"
-        grid-item-height="460"
-        gutter-size="8px"
+        grid-item-height="480"
+        gutter-size="10px"
         sortable-columns="BOOK_TITLE;LANGUAGE_NAME;NAME"
         keys="BOOK_ID"
         pageable="no"
         detail-mode="no"
         query-rows="16">
     <o-grid-item *ngFor="let item of books.dataArray">
-        <o-column layout-padding>
+        <o-column layout-padding class="container-item">
             <app-books-miniature [bookitem]=item></app-books-miniature>
         </o-column>
     </o-grid-item>
