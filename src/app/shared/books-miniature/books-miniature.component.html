@@ -4,7 +4,7 @@
     <h5 class="card-title"> {{book.bookTitle}}</h5>
   <h6 class="card-subtitle"> {{book.bookAuthor}} </h6>
   <h6 class="card-text">{{book.bookLanguage}} </h6>
-  <app-star-rating class="stars" [bookrating]= 2 ></app-star-rating>
+  <app-star-rating class="stars" [bookrating]= book.bookRating  ></app-star-rating>
 </div>
 </div>
 
