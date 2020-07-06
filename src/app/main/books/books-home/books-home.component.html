@@ -4,13 +4,15 @@
         service="books"
         entity="bookdetails"
         columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;NAME;COVER_PAGE"
+        cols="4"
         orderable="yes"
         quick-filter="yes"
-        grid-item-height="350"
+        grid-item-height="460"
         gutter-size="8px"
         sortable-columns="BOOK_TITLE;LANGUAGE_NAME;NAME"
         keys="BOOK_ID"
         pageable="no"
+        detail-mode="no"
         query-rows="16">
     <o-grid-item *ngFor="let item of books.dataArray">
         <o-column layout-padding>

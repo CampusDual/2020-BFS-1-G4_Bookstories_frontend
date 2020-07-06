@@ -19,6 +19,8 @@ export class BooksMiniatureComponent implements OnInit {
   ngOnInit() {
     
     this.book = new BookModel(this.bookitem )
+
   }
+
 
 }

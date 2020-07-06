@@ -1,11 +1,10 @@
-
-<div class="card"  style="width: 15em;" >
-  <img class="card-img-top"  [src]="book.bookCover" alt="{{book.bookTitle}} Image" >
+<div class="card">
+  <img class="img-fluid" [src]="book.bookCover" alt="{{book.bookTitle}} Image" >
   <div class="card-body">
     <h5 class="card-title"> {{book.bookTitle}}</h5>
   <h6 class="card-subtitle"> {{book.bookAuthor}} </h6>
   <h6 class="card-text">{{book.bookLanguage}} </h6>
-  <app-star-rating [bookrating]= 2 ></app-star-rating>
+  <app-star-rating class="stars" [bookrating]= 2 ></app-star-rating>
+</div>
 </div>
 
-</div>
