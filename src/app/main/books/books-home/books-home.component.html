@@ -12,8 +12,8 @@
 
 <div fxFlex>
 <o-grid #grid attr="booksGrid" service="books" entity="booksbase"
-        columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE"
-        orderable="yes" quick-filter="yes"  sortable-columns="BOOK_TITLE;LANGUAGE_NAME"
+        columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING"
+        orderable="yes" quick-filter="yes"  sortable-columns="BOOK_TITLE;LANGUAGE_NAME,;BOOK_RATING"
         keys="BOOK_ID" pageable="no" query-rows="16">
   <o-grid-item *ngFor="let item of grid.dataArray" >
     <o-column layout-padding> 

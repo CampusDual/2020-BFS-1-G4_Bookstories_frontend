@@ -11,6 +11,7 @@ export class BookModel  {
     // language
     public bookLanguageId : number;
     public bookLanguage : string;
+    public bookRating : number;
     
     
 
@@ -23,6 +24,8 @@ export class BookModel  {
       this.bookLanguage = item['LANGUAGE_NAME'];
       this.bookCover = item['COVER_PAGE'];
       this.bookAuthor = item['NAME'];
+      this.bookRating = item['BOOK_RATING']
+      console.log(item['BOOK_RATING'])
         
   
     }

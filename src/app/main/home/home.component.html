@@ -7,7 +7,7 @@
 <h4>Tus recomendados</h4>
 <div >
   <o-grid #grid attr="booksGrid" service="books" entity="booksbase" page-size="5"
-        columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE" cols="5"
+        columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" cols="5"
         orderable="no" quick-filter="no" grid-item-height="20em"  gutter-size="0.1em"   query-rows="5"     keys="BOOK_ID" pageable="no" >
   <o-grid-item *ngFor="let item of grid.dataArray;let ind = index" >
     <o-row layout-padding class="row"> 
