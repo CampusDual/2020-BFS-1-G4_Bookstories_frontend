@@ -26,6 +26,7 @@
     "@angular/platform-server": "6.1.10",
     "@angular/router": "6.1.10",
     "@angular/upgrade": "6.1.10",
+    "@material/card": "^7.0.0",
     "@ngx-translate/core": "10.0.2",
     "@ngx-translate/http-loader": "3.0.1",
     "bootstrap": "^4.5.0",
