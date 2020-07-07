@@ -14,6 +14,8 @@ export class BooksDetailComponent implements OnInit {
   private book_id: number;
   user: string = "";
   editMode: boolean = false;
+  public activeEditReview: string = ""
+  public activeEditRating: number = 0
   constructor(private loginService: LoginService,
     private reviewService: ReviewService,
     private route: ActivatedRoute) { }
