@@ -1,36 +1,46 @@
+
 .card{
-   
-    background-color: darkgray;
-   
-}
-img.bookImage{ width: 150px; height: 150px;
-    
+  width: 315px;
+  height: 465px;
+  background-image: linear-gradient(180deg,#0D2A1A, #859e85, #081a10);
+  border-radius: 2rem;
+  border-width: 0.3rem;
+  border-color: #06180e;
+  margin-top: 2rem;
 
 }
-div.booksLabel{
-    align-items: center;
-
+.card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 3px #859e85;
 }
-div.bookTitle{
-    max-width: 150px;
-    text-align: center;
-    font-weight: bold;
 
+.img-fluid{
+  //object-fit: scale-down;
+
+  max-height: 221px;
+  max-width: 140px;
+  align-self: center;
+  margin-top: 2.5rem;
 }
-div.author {
 
-    text-align: center;
-    
-    font-weight: bold;
-  }
-div.language {
-    text-align: center;
-    color: #3498db;
-  }
+.card-body{
+  text-align: center;
+  padding-top: 1rem;
+}
 
-  .card-img-low {
+.card-title{
+  color: #CBBBA0;
+  text-align: center;
+}
+.card-subtitle{
+  text-align: center;
+  color: #a69680;
+}
+.card-text{
+  text-align: center;
+  color: #91ac91;
+}
+.stars{
+  text-align: center;
+}
 
-    width: 100%;
-    height: 100%;
-
-  }

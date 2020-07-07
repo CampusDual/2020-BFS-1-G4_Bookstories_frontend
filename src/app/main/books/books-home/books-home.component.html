@@ -1,52 +1,23 @@
-<!--<div fxFlex>-->
-<!--  <o-table fxFlex attr="booksTable" service="books" entity="bookdetails" keys="BOOK_ID"-->
-<!--           columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;NAME"-->
-<!--           visible-columns="BOOK_TITLE;LANGUAGE_NAME;NAME" query-rows="20">-->
-<!--    <o-table-column attr="BOOK_TITLE" title="BOOK_TITLE" ></o-table-column>-->
-<!--    <o-table-column attr="LANGUAGE_NAME" title="LANGUAGE_NAME" ></o-table-column>-->
-<!--    <o-table-column attr="BOOK_ID" title="BOOK_ID" ></o-table-column>-->
-<!--    <o-table-column attr="NAME" title="NAME" ></o-table-column>-->
-
-<!--  </o-table>-->
-<!--</div>-->
-
 <div fxFlex>
-<o-grid #grid attr="booksGrid" 
-        service="books" 
+<o-grid #books
+        class="grid-container"
+        attr="booksGrid"
+        service="books"
         entity="booksbase"
         columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING"
+        cols="4"
         orderable="yes"
         quick-filter="yes"
-        sortable-columns="BOOK_TITLE;LANGUAGE_NAME,;BOOK_RATING"
-        keys="BOOK_ID" 
-        pageable="no" 
+        grid-item-height="500px"
+        gutter-size="1rem"
+        sortable-columns="BOOK_TITLE;LANGUAGE_NAME;"
+        keys="BOOK_ID"
+        pageable="no"
         query-rows="16">
-  <o-grid-item *ngFor="let item of grid.dataArray" >
-    <o-column layout-padding> 
- <!--     <img [src]="item.COVER_PAGE" style="margin-top:8px" width="200" height="200">
-      <h4> {{item.BOOK_TITLE}} </h4>
-        <div class="author"> {{item.NAME}} </div>
-        <div class="language">{{item.LANGUAGE_NAME}} </div> -->
-        <app-books-miniature [bookitem] = item></app-books-miniature>  
-      </o-column> 
-  </o-grid-item>
+    <o-grid-item *ngFor="let item of books.dataArray">
+        <o-column layout-padding class="container-item">
+            <app-books-miniature [bookitem]=item></app-books-miniature>
+        </o-column>
+    </o-grid-item>
 </o-grid>
 </div>
-
-<!--<o-grid #grid attr="booksGrid" service="books" entity="bookdetails"-->
-<!--        columns="book_id;book_title" keys="book_id"-->
-<!--        orderable="yes" quick-filter="yes" grid-item-height="1:2" sortable-columns="name;email">-->
-<!--  <o-grid-item *ngFor="let list of grid.dataArray">-->
-<!--    <o-column layout-padding  class="container-item">-->
-<!--&lt;!&ndash;      <img [src]="list.thumbnailUrl" style="margin-top:8px">&ndash;&gt;-->
-<!--      <h4> {{ list.book_title }} </h4>-->
-<!--      <div class="phone"><mat-icon>phone</mat-icon><span> {{ list.phone }} </span></div>-->
-<!--      <div class="email"><mat-icon>email</mat-icon><span> {{ list.email }}</span></div>-->
-<!--      <div class="domain"><mat-icon>domain</mat-icon><span>{% raw %} {{ list.companyname }} </span></div>-->
-<!--      <div class="website"><mat-icon>website</mat-icon><span>  {{ list.website }}</span></div>-->
-<!--      <div class="body">-->
-<!--        {{ list.body }}-->
-<!--      </div>-->
-<!--    </o-column>-->
-<!--  </o-grid-item>-->
-<!--</o-grid>-->
