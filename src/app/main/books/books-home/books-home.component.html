@@ -8,12 +8,11 @@
         cols="4"
         orderable="yes"
         quick-filter="yes"
-        grid-item-height="480"
-        gutter-size="10px"
+        grid-item-height="500px"
+        gutter-size="1rem"
         sortable-columns="BOOK_TITLE;LANGUAGE_NAME;"
         keys="BOOK_ID"
         pageable="no"
-        detail-mode="yes"
         query-rows="16">
     <o-grid-item *ngFor="let item of books.dataArray">
         <o-column layout-padding class="container-item">
