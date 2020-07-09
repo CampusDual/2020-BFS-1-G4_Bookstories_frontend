@@ -24,7 +24,7 @@
 </o-column>
 </o-row>
 <o-row>
-  <o-list #list attr="bookauthors" service="books" entity="bookauthors" keys="BOOK_ID" parent-keys="BOOK_ID"
+  <o-list #list attr="bookauthors" service="books" entity="bookauthors" keys="ID_AUTHOR" parent-keys="BOOK_ID"
 columns="NAME" controls="false" title="AUTHOR" detail-form-route="/main/authors">
 <o-list-item *ngFor="let row of list.dataArray">
   <o-list-item-text class="authorc" layout-padding #item title="{{ row.NAME }}">
@@ -57,11 +57,11 @@ columns="NAME" controls="false" title="AUTHOR" detail-form-route="/main/authors"
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-stroked-button (click)="editMode ? createReview() : createReview()"  class="opinion-btn">
+    <button mat-stroked-button (click)="editMode ? updateReview() : createReview()"  class="opinion-btn">
       <mat-icon>update</mat-icon>
       <span>{{(editMode ? 'UPDATE_REVIEW' : 'CREATE_REVIEW') | oTranslate}}</span>
     </button>
-    <button *ngIf="editMode" mat-stroked-button (click)="createReview()" class="opinion-btn">
+    <button *ngIf="editMode" mat-stroked-button (click)="deleteReview()" class="opinion-btn">
       <mat-icon>delete</mat-icon>
       <span>{{'DELETE_REVIEW' |oTranslate}}</span>
     </button>

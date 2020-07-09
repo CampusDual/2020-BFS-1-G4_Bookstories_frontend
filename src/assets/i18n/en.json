@@ -28,6 +28,15 @@
   "REAL_NAME": "Real Name",
   "AUTHORS": "Authors",
   "ID_AUTHOR": "Author ID",
-  "NACIONALITY": "Nationality"
+  "NACIONALITY": "Nationality",
+  "REGISTER": "New User?",
+  "CLICK_HERE": "Register an account",
+  "REVIEW_THIS_BOOK": "Review this book",
+  "BOOK_RATING": "Rating",
+  "BOOK_REVIEW": "Comment",
+  "CREATE_REVIEW": "Publish",
+  "UPDATE_REVIEW": "Update",
+  "DELETE_REVIEW": "Delete",
+  "YOUR_REVIEW": "Your review"
 
 }

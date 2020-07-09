@@ -28,5 +28,14 @@
   "REAL_NAME": "Nombre Real",
   "AUTHORS": "Autores",
   "ID_AUTHOR": "ID del autor",
-  "NACIONALITY": "Nacionalidad"
+  "NACIONALITY": "Nacionalidad",
+  "REGISTER": "¿Nuevo usuario?",
+  "CLICK_HERE": "Crea una nueva cuenta",
+  "REVIEW_THIS_BOOK": "Reseña este libro",
+  "BOOK_RATING": "Puntuación",
+  "BOOK_REVIEW": "Comentario",
+  "CREATE_REVIEW": "Publicar",
+  "UPDATE_REVIEW": "Actualizar",
+  "DELETE_REVIEW": "Eliminar",
+  "YOUR_REVIEW": "Tu reseña"
 }
