@@ -1,0 +1,21 @@
+<!--<o-list #listA attr="lists" service="lists" entity="lists" keys="LIST_ID" 
+columns="LIST_ID" controls="false" title="BOOKS">
+<div *ngFor="let bookitem of listA.dataArray">
+  {{bookitem['LIST_ID']}}
+  </div>
+  </o-list>-->
+<o-form>
+
+
+
+        <o-list-picker attr="list" service="lists" entity="lists" value-column="LIB_NAME" columns="LIST_ID;LIB_NAME;CREATION_DATE;DESCRIPCION;IDTYPE_OF_LIST;NAME;TUSERS_USER" 
+      visible-columns="LIB_NAME;LIST_ID;TUSERS_USER" separator="" required="yes">
+   </o-list-picker>
+</o-form>
+ <!-- 
+  <o-list #list attr="booksoflist" service="books" entity="booksoflist" keys="LIST_LIST_ID" parent-keys="BOOK_ID"
+columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" controls="false" title="BOOKS">
+<div *ngFor="let bookitem of list.dataArray">
+  <app-books-miniature [bookitem] = bookitem></app-books-miniature>
+  </div>
+  </o-list>-->

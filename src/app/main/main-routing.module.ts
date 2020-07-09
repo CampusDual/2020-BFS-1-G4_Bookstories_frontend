@@ -6,6 +6,7 @@ import { MainComponent } from './main.component';
 import { HomeModule } from './home/home.module';
 import {BooksModule} from './books/books.module'
 import { AuthorsModule } from './authors/authors.module'
+import { UserListsModule } from './user-lists/user-lists.module';
 
 export function loadHomeModule() {
   return HomeModule;
@@ -16,6 +17,10 @@ export function loadBooksModule() {
 
 export function loadAuthorsModule() {
   return AuthorsModule;
+}
+
+export function loadUserListModule() {
+  return UserListsModule;
 }
 
 export const routes: Routes = [
@@ -36,7 +41,12 @@ export const routes: Routes = [
       {
         path: 'authors',
         loadChildren: loadAuthorsModule
+      },
+      {
+        path: 'lists',
+        loadChildren: loadUserListModule
       }
+      
     ]
   }
 ];

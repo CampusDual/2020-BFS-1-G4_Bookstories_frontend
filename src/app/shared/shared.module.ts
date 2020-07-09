@@ -9,7 +9,9 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     OntimizeWebModule,
     
   ],
-  declarations: [BooksMiniatureComponent,StarRatingComponent
+  declarations: [
+    BooksMiniatureComponent,
+    StarRatingComponent
   ],
   exports: [
     CommonModule,

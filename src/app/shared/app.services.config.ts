@@ -7,5 +7,9 @@ export const SERVICE_CONFIG: Object = {
   },
   'reviews': {
     'path': '/REVIEWS'
+  },
+  'lists': {
+    'path': '/LISTS'
   }
+  
 };
