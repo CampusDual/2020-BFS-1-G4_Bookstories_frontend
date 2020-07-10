@@ -1,12 +1,102 @@
+.form{
+    background-image: linear-gradient(180deg, #0d2a1a, #91ac91, #0d2a1a);
+    width: 85vw;
+    height: 98vh;
+    padding: 0.5rem;
+}
+
+.book-container{
+    align-self: center;
+    margin-top: 2rem;
+    //background-image: linear-gradient(-180deg, #91ac91, #91ac91, #0D2A1A);
+    background-color: #91ac91;
+    border-radius: 4rem;
+    width: 50vw;
+    filter: contrast(130%);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+}
+
+
 .authorc {
-
-    background-color: whitesmoke;
-    box-shadow: 1px 1px 5px #999;
-
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
 }
-
 .authorc:hover {
+    box-shadow: 1px 1px 5px #0D2A1A;
+}
 
-    box-shadow: 1px 1px 5px #999;
+.opinion-card{
+    background-color: #0D2A1A;
+    width: 40vw;
+    align-self: center;
+    filter: contrast(120%);
+    margin-top: 2rem;
+    padding: 2.5rem;
+}
+.text-reviews{
+    margin-top: 2rem;
+    align-self: center;
+    width: 50vw;
+    filter: contrast(130%);
+}
+
+.title-container{
+    padding: 1.5rem;
+    align-self: center;
+    background-image: linear-gradient(180deg,#0D2A1A,#083F21,#4b7b61,#91ac91,#91ac91);
+    border-radius: 2.5rem;
+    min-width: 100%;
+}
+
+.cover-container{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    align-self: start;
+    border-radius: 2.5rem;
+    background-image: linear-gradient(180deg,#0D2A1A, #91ac91, #081a10);
+}
+.content-container{
+    margin: 1rem;
+    margin-top: 0px;
+    padding: 1rem;
+    align-self: start;
+    border-radius: 1rem;
+    min-width: 30%;
+}
+
+.buttons-container{
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 2.5rem;
+    min-width: 15vw;
+    background-color: #112f1e;
+    align-self: flex-start;
+}
+
+.authors-container{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    min-width: 30vw;
+}
+.content-row-flex {
+    border-radius: 3em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #859e85;
 
 }
+
+.c1{
+    background-color: #859e85;
+    align-items: center;
+    border-radius:  2.5rem;
+}
+

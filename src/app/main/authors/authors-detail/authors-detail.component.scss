@@ -1,12 +1,51 @@
+.form{
+    background-image: linear-gradient(180deg, #0d2a1a, #91ac91, #0d2a1a);
+    width: 85vw;
+    height: 98vh;
+    padding: 0.5rem;
+}
+
+.container{
+    align-self: center;
+    margin-top: 2rem;
+    //background-image: linear-gradient(-180deg, #91ac91, #91ac91, #0D2A1A);
+    background-color: #91ac91;
+    border-radius: 4rem;
+    width: 50vw;
+    filter: contrast(130%);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+}
+
 .bookc {
-
-    background-color: whitesmoke;
-    box-shadow: 1px 1px 5px #999;
-
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: transparent;
 }
 
 .bookc:hover {
-
-    box-shadow: 1px 1px 5px #999;
-
+    box-shadow: 1px 1px 5px #0D2A1A;
 }
+
+
+.title-container{
+    padding: 1.5rem;
+    align-self: center;
+    background-image: linear-gradient(180deg,#0D2A1A,#083F21,#4b7b61,#91ac91,#91ac91);
+    border-radius: 2.5rem;
+    min-width: 100%;
+}
+
+
+.books-container{
+    background-color: #859e85;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    min-width: 40vw;
+    align-self: center;
+}
+
