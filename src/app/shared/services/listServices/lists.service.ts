@@ -38,16 +38,16 @@ private books : BookModel[]
      
     )
   }
-  getBooksOfLists(user_: string) {
+  getBooksOfLists(list_id: number) {
     const filter = {
-      'tusers_user': user_
+      'list_id': list_id
     };
     const columns = [
       "list_id",
       "lib_name",
       "creation_date",
       "descripcion",
-      "idtype_of_list",
+      "type_of_list_idtype_of_list",
       "tusers_user",
       "name"
     ];

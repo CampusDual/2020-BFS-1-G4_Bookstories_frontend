@@ -9,7 +9,7 @@ import { ValueTransformer } from '@angular/compiler/src/util';
   styleUrls: ['./userlists-home.component.scss']
 })
 export class UserlistsHomeComponent implements OnInit {
-  private user : string =""
+  public user : string =""
   public lists : any[]
 
   constructor(private loginService: LoginService,
@@ -39,18 +39,21 @@ export class UserlistsHomeComponent implements OnInit {
 
 
   getDataArray() {
+    
+    //const array: Array<Object> = new Array(this.lists);
     const array: Array<Object> = [];
-    for(let i = 0;i< this.lists.length;i++){
-      array.push({
-        'key': this.lists[i]['list_id'],
-        'value': this.lists[i]['lib_name']
-      });
+    
+    if(this.lists.length != undefined){
+    this.lists.forEach(function(item) 
+    { 
+      array.push(
+        {
+          'key': item['list_id'],
+          'value': item['lib_name']
+        }
+      )});
 
-
-    }
-
-
-   
+      }
     return array;
   }
 
@@ -58,4 +61,10 @@ export class UserlistsHomeComponent implements OnInit {
   public getValueSimple(): any {
     return 2;
   }
+
+  onSetValueOnValueChange(){
+  
+   console.log("combo cambiado")
+}
+  
 }

@@ -1,20 +1,34 @@
-<!--<o-list #listA attr="lists" service="lists" entity="lists" keys="LIST_ID" 
-columns="LIST_ID" controls="false" title="BOOKS">
+<!--
+<o-list #listA attr="listsuser" service="lists" entity="lists" keys="LIST_ID;TUSERS_USER" parent-keys="TUSERS_USER:TUSERS_USER[this.user]"
+columns="LIST_ID" controls="false" title="listas">
 <div *ngFor="let bookitem of listA.dataArray">
   {{bookitem['LIST_ID']}}
   </div>
-  </o-list>-->
-  <!--
-  <div fxFlex>
-<o-form>
+  </o-list> -->
 
-
-  <o-combo attr="combo-editable" label="Listas" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
-  columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
 
  
-</o-form>
-{{getValueSimple()}}
+<div fxFlex>
+  <o-form>
+
+
+    <o-combo #COMBOLISTAS attr="combo-editable" label="Listas" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
+    columns="key;value" visible-columns="value" required="yes" read-only="false" >
+    </o-combo>
+   
+
+
+
+<!--{{listas['key']}} >
+</div>  
+
+<div fxFlex>
+  <o-form>
+    <o-combo attr="listsuser" keys="LIST_ID;TUSERS_USER" service="lists" entity="lists" columns="LIST_ID;LIB_NAME;CREATION_DATE;DESCRIPCION;IDTYPE_OF_LIST;NAME;TUSERS_USER" 
+   ></o-combo>
+ 
+  </o-form>
+</div>  -->
 
   <o-grid #books
           class="grid-container"
@@ -29,6 +43,7 @@ columns="LIST_ID" controls="false" title="BOOKS">
           gutter-size="1rem"
           sortable-columns=""
           keys="BOOK_ID"
+          parent-keys="LIST_LIST_ID:combo-editable[key]"
           pageable="no"
           query-rows="16">
       <o-grid-item *ngFor="let item of books.dataArray">
@@ -36,15 +51,14 @@ columns="LIST_ID" controls="false" title="BOOKS">
               <app-books-miniature [bookitem]=item></app-books-miniature>
           </o-column>
       </o-grid-item>
-  </o-grid>
-  </div> -->
- <!-- 
-  <o-list #list attr="booksoflist" service="books" entity="booksoflist" keys="LIST_LIST_ID" parent-keys="BOOK_ID"
+  </o-grid>    </o-form>
+  </div> 
+<!--
+  <o-list #list attr="booksoflist" service="books" entity="booksoflist" keys="LIST_LIST_ID" parent-keys="BOOK_ID:1"
 columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" controls="false" title="BOOKS">
 <div *ngFor="let bookitem of list.dataArray">
   <app-books-miniature [bookitem] = bookitem></app-books-miniature>
   </div>
-  </o-list>-->
+  </o-list>
 
-
-  
+-->
