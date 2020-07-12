@@ -4,14 +4,40 @@ columns="LIST_ID" controls="false" title="BOOKS">
   {{bookitem['LIST_ID']}}
   </div>
   </o-list>-->
+  <!--
+  <div fxFlex>
 <o-form>
 
 
+  <o-combo attr="combo-editable" label="Listas" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
+  columns="key;value" visible-columns="value" required="yes" read-only="false"></o-combo>
 
-        <o-list-picker attr="list" service="lists" entity="lists" value-column="LIB_NAME" columns="LIST_ID;LIB_NAME;CREATION_DATE;DESCRIPCION;IDTYPE_OF_LIST;NAME;TUSERS_USER" 
-      visible-columns="LIB_NAME;LIST_ID;TUSERS_USER" separator="" required="yes">
-   </o-list-picker>
+ 
 </o-form>
+{{getValueSimple()}}
+
+  <o-grid #books
+          class="grid-container"
+          attr="booksGrid"
+          service="books"
+          entity="booksoflist"
+          columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING"
+          cols="4"
+          orderable="yes"
+          quick-filter="no"
+          grid-item-height="500px"
+          gutter-size="1rem"
+          sortable-columns=""
+          keys="BOOK_ID"
+          pageable="no"
+          query-rows="16">
+      <o-grid-item *ngFor="let item of books.dataArray">
+          <o-column layout-padding class="container-item">
+              <app-books-miniature [bookitem]=item></app-books-miniature>
+          </o-column>
+      </o-grid-item>
+  </o-grid>
+  </div> -->
  <!-- 
   <o-list #list attr="booksoflist" service="books" entity="booksoflist" keys="LIST_LIST_ID" parent-keys="BOOK_ID"
 columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" controls="false" title="BOOKS">
@@ -19,3 +45,6 @@ columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING" controls="fals
   <app-books-miniature [bookitem] = bookitem></app-books-miniature>
   </div>
   </o-list>-->
+
+
+  
