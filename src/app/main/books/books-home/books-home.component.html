@@ -1,20 +1,20 @@
-<div fxFlex>
+<div fxFlex="100" class="container">
 <o-grid #books
-        class="grid-container"
+        class="grid-container grid"
         attr="booksGrid"
         service="books"
         entity="booksbase"
         columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING"
-        cols="4"
         orderable="yes"
         quick-filter="yes"
-        grid-item-height="500px"
+        grid-item-height="24rem"
+        grid-item-width="16rem"
         gutter-size="1rem"
         sortable-columns="BOOK_TITLE;LANGUAGE_NAME;"
         keys="BOOK_ID"
         pageable="no"
         query-rows="16">
-    <o-grid-item *ngFor="let item of books.dataArray">
+    <o-grid-item *ngFor="let item of books.dataArray" class="grid-item">
         <o-column layout-padding class="container-item">
             <app-books-miniature [bookitem]=item></app-books-miniature>
         </o-column>

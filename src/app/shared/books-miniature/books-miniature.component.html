@@ -1,9 +1,8 @@
-<div class="card">
-  <img class="img-fluid" [src]="book.bookCover" alt="{{book.bookTitle}} Image">
-  <div class="card-body">
-    <h5 class="card-title"> {{book.bookTitle}}</h5>
-<!--    <h6 class="card-subtitle"> {{book.bookAuthor}} </h6>-->
-    <h6 class="card-text">{{book.bookLanguage}} </h6>
+<div class="book-miniature">
+  <img class="img" [src]="book.bookCover" alt="{{book.bookTitle}} Image">
+  <div class="miniature-body">
+    <b class="miniature-title"> {{book.bookTitle}}</b>
+    <p class="miniature-text">{{book.bookLanguage}} </p>
     <div class="stars">
       <app-star-rating [bookrating]=book.bookRating></app-star-rating>
     </div>
