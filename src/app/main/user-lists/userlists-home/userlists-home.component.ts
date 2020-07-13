@@ -83,4 +83,4 @@ console.log(this.mygrid.getDataArray());
   
   }
   
-}
+
