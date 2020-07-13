@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { ListsService } from 'app/shared/services/listServices/lists.service';
-import { LoginService } from 'ontimize-web-ngx';
+import { LoginService, OFormValue } from 'ontimize-web-ngx';
 import { ValueTransformer } from '@angular/compiler/src/util';
 
 @Component({
@@ -13,11 +13,8 @@ export class UserlistsHomeComponent implements OnInit {
   public lists : any[]
 
   constructor(private loginService: LoginService,
-              private listservice:ListsService) {
-
-
-
-   }
+              private listservice:ListsService
+              ) {   }
 
   ngOnInit() {
     this.user = this.loginService.getSessionInfo().user
@@ -46,25 +43,32 @@ export class UserlistsHomeComponent implements OnInit {
     if(this.lists.length != undefined){
     this.lists.forEach(function(item) 
     { 
+      if(item != undefined){
       array.push(
         {
           'key': item['list_id'],
           'value': item['lib_name']
         }
-      )});
+      )}});
 
       }
     return array;
   }
 
- 
+  @ViewChild("COMBOLISTAS") combovalue: any;
+  @ViewChild("COMBOLISTAS") combovalue2: ElementRef;
   public getValueSimple(): any {
-    return 2;
+    var seleccion : number = 2;
+     var sel :OFormValue = this.combovalue.value
+    if(sel != undefined){
+      seleccion  = sel.value;
+     console.log(seleccion)}
+  
+
+    return seleccion;
   }
 
-  onSetValueOnValueChange(){
   
-   console.log("combo cambiado")
-}
+  }
   
 }

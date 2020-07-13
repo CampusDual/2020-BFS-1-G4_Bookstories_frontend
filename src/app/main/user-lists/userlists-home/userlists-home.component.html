@@ -9,11 +9,20 @@ columns="LIST_ID" controls="false" title="listas">
 
  
 <div fxFlex>
-  <o-form>
+  <o-form attr="formulario" detect-changes-on-blur="yes" header-actions ="R" header-mode="floating">
 
 
-    <o-combo #COMBOLISTAS attr="combo-editable" label="Listas" [static-data]="getDataArray()" [data]="getValueSimple()" value-column="key"
-    columns="key;value" visible-columns="value" required="yes" read-only="false" >
+    <o-combo #COMBOLISTAS 
+      attr="combo-editable" 
+      label="Listas" 
+      [static-data]="getDataArray()" 
+      [data]="getValueSimple()" 
+      value-column="key"
+      columns="key;value" 
+      visible-columns="value" 
+      required="yes" 
+      read-only="false"
+       >
     </o-combo>
    
 
@@ -30,7 +39,7 @@ columns="LIST_ID" controls="false" title="listas">
   </o-form>
 </div>  -->
 
-  <o-grid #books
+  <o-grid  #booksgrid
           class="grid-container"
           attr="booksGrid"
           service="books"
@@ -38,15 +47,16 @@ columns="LIST_ID" controls="false" title="listas">
           columns="BOOK_ID;BOOK_TITLE;LANGUAGE_NAME;COVER_PAGE;BOOK_RATING"
           cols="4"
           orderable="yes"
-          quick-filter="no"
+          quick-filter="yes"
           grid-item-height="500px"
           gutter-size="1rem"
-          sortable-columns=""
+          sortable-columns="BOOK_ID"
           keys="BOOK_ID"
           parent-keys="LIST_LIST_ID:combo-editable[key]"
           pageable="no"
-          query-rows="16">
-      <o-grid-item *ngFor="let item of books.dataArray">
+          refresh-button="yes"
+          >
+      <o-grid-item *ngFor="let item of booksgrid.dataArray  ">
           <o-column layout-padding class="container-item">
               <app-books-miniature [bookitem]=item></app-books-miniature>
           </o-column>
