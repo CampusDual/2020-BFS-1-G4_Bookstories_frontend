@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef, Input } from '@angular/core';
 import { ListsService } from 'app/shared/services/listServices/lists.service';
-import { LoginService, OFormValue } from 'ontimize-web-ngx';
+import { LoginService, OFormValue, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
 import { ValueTransformer } from '@angular/compiler/src/util';
 
 @Component({
@@ -11,6 +11,7 @@ import { ValueTransformer } from '@angular/compiler/src/util';
 export class UserlistsHomeComponent implements OnInit {
   public user : string =""
   public lists : any[]
+  
 
   constructor(private loginService: LoginService,
               private listservice:ListsService
@@ -26,6 +27,17 @@ export class UserlistsHomeComponent implements OnInit {
     })
 
   }
+  @ViewChild('COMBOLISTAS')  public myOption: OComboComponent;
+  @ViewChild('booksgrid')  public mygrid: OGridComponent;
+  ngAfterViewInit() {
+    
+    this.myOption.onChange.subscribe(event => {
+      console.log("onchangess")
+     // this.mygrid.reloadData()
+      this.mygrid.initialize()
+console.log(this.mygrid.getDataArray());
+      console.log(this.mygrid.getParentKeysValues());
+    });}
 
   private getUserLists(){
     return this.listservice.getUserLists(this.user)
@@ -62,7 +74,7 @@ export class UserlistsHomeComponent implements OnInit {
      var sel :OFormValue = this.combovalue.value
     if(sel != undefined){
       seleccion  = sel.value;
-     console.log(seleccion)}
+     }
   
 
     return seleccion;
