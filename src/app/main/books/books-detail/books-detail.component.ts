@@ -90,19 +90,24 @@ export class BooksDetailComponent implements OnInit {
   genRatingValues() {
     const array: Array<Object> = [];
     array.push({
-      'rating': 1
+      'rating': 1,
+      'stars': "⭐"
     });
     array.push({
-      'rating': 2
+      'rating': 2,
+      'stars': "⭐⭐"
     });
     array.push({
-      'rating': 3
+      'rating': 3,
+      'stars': "⭐⭐⭐"
     });
     array.push({
-      'rating': 4
+      'rating': 4,
+      'stars': "⭐⭐⭐⭐"
     });
     array.push({
-      'rating': 5
+      'rating': 5,
+      'stars': "⭐⭐⭐⭐⭐"
     });
     return array;
   }

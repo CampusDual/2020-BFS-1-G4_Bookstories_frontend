@@ -93,35 +93,34 @@
             </o-column>
         </div>
     </div>
+
+
     <mat-card
             class="opinion-card"
             style="border-radius: 1rem;box-shadow:2px 2px 2px #313b36;"
     >
         <mat-card-header>
-            <mat-card-title>{{(editMode ? 'YOUR_REVIEW' : 'REVIEW_THIS_BOOK') | oTranslate}}</mat-card-title>
-            <mat-card-subtitle *ngIf="editMode">
-            </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <o-form
-                    editable-detail="no"
-                    show-header="no">
-                <o-combo #activeValue
-                         label="BOOK_RATING"
-                         attr="rating"
-                         [data]="activeEditRating"
-                         [static-data]="genRatingValues()"
-                         required="true"
-                         read-only="false"
-                         value-column="rating"
-                         columns="rating"
-                         visible-columns="rating"
-                         null-selection="no"></o-combo>
-                <o-textarea-input #activeReview attr="review" label="BOOK_REVIEW" fxFlex [data]="activeEditReview"
-                                  required="no"
-                                  read-only="no"></o-textarea-input>
-            </o-form>
-        </mat-card-content>
+    <mat-card-title>{{(editMode ? 'YOUR_REVIEW' : 'REVIEW_THIS_BOOK') | oTranslate}}</mat-card-title>
+    <mat-card-subtitle  *ngIf="editMode">
+</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <o-form editable-detail="no" show-header="no">
+      <o-combo #activeValue
+               label="BOOK_RATING"
+               attr="rating"
+               [data]="activeEditRating"
+               [static-data]="genRatingValues()"
+               required="true"
+               read-only="false"
+               value-column="rating"
+               columns="rating"
+               visible-columns="stars"
+               null-selection="no"></o-combo>
+      <o-textarea-input #activeReview attr="review" label="BOOK_REVIEW" fxFlex [data]="activeEditReview" required="no"
+                        read-only="no"></o-textarea-input>
+    </o-form>
+  </mat-card-content>
         <mat-card-actions style="display: flex; justify-content: space-between; padding: 1.5rem;">
             <button *ngIf="editMode" mat-stroked-button (click)="createReview()" class="opinion-btn">
                 <mat-icon>delete</mat-icon>
@@ -133,7 +132,6 @@
             </button>
         </mat-card-actions>
     </mat-card>
-
     <div class="text-reviews">
         <o-row title="{{'REVIEWS'}}">
             <o-list #listrev
