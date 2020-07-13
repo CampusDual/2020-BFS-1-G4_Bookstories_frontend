@@ -1,28 +1,60 @@
-<o-form service="authors" entity="author" keys="id_author" header-actions="" show-header-navigation="no" editable-detail="no">
-  
-  <o-row title="{{'AUTHOR'}}">
-  <o-column>
-    <o-integer-input class="input-padding" attr="id_author" title="ID_AUTHOR" read-only="true" fxFlex="40"></o-integer-input>
-    <o-row>
-    <o-text-input class="input-padding" attr="REAL_NAME" title="real_name" read-only="true" fxFlex="80"></o-text-input>
-    </o-row>
-  </o-column>
-  <o-column>
-    <o-row>
-    <o-text-input class="input-padding" attr="NAME" title="NAME" read-only="true" fxFlex="80"></o-text-input>
-    </o-row>
-    <o-row>
-      <o-text-input class="input-padding" attr="NACIONALITY" title="NACIONALITY" read-only="true" fxFlex="80"></o-text-input>
-      </o-row>
-  </o-column>
-</o-row>
-  <o-row>
-    <o-list #list attr="authorbooks" service="authors" entity="authorbooks" keys="id_author" parent-keys="id_author"
-  columns="BOOK_TITLE" refresh-button="false" quick-filter="false" delete-button="false" title="BOOKS" detail-form-route="/main/books">
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text class="bookc" layout-padding #item title="{{ row.BOOK_TITLE }}">
-    </o-list-item-text>
-  </o-list-item>
-</o-list>
-  </o-row>
+<o-form class="form" service="authors" entity="author" keys="id_author" header-actions="" show-header-navigation="no"
+        editable-detail="no">
+    <div class="author-container">
+        <o-column class="title-container">
+            <o-text-input
+                    class="input-padding"
+                    attr="NAME"
+                    title="NAME"
+                    read-only="true"
+                    fxFlex="100">
+            </o-text-input>
+        </o-column>
+        <div class="details-container">
+            <o-column layout-align="end">
+                <o-integer-input
+                        class="input-padding"
+                        attr="id_author"
+                        title="ID_AUTHOR"
+                        read-only="true"
+                        fxFlex="40">
+                </o-integer-input>
+                <o-text-input
+                        class="input-padding"
+                        attr="REAL_NAME"
+                        title="real_name"
+                        read-only="true"
+                        fxFlex="80">
+                </o-text-input>
+                <o-text-input
+                        class="input-padding"
+                        attr="NACIONALITY"
+                        title="NACIONALITY"
+                        read-only="true"
+                        fxFlex="80">
+                </o-text-input>
+                <o-column>
+                </o-column>
+            </o-column>
+        </div>
+        <div class="content-row-flex">
+            <o-column class="books-container" title="BOOKS">
+                <o-list #list
+                        attr="authorbooks"
+                        service="authors"
+                        entity="authorbooks"
+                        keys="id_author"
+                        parent-keys="id_author"
+                        columns="BOOK_TITLE"
+                        controls="false"
+                        detail-form-route="/main/books">
+
+                    <o-list-item *ngFor="let row of list.dataArray">
+                        <o-list-item-text class="bookc" layout-padding #item title="{{ row.BOOK_TITLE }}">
+                        </o-list-item-text>
+                    </o-list-item>
+                </o-list>
+            </o-column>
+        </div>
+    </div>
 </o-form>

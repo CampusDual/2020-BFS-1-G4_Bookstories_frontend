@@ -1,46 +1,58 @@
-
-.card{
-  width: 315px;
-  height: 465px;
-  background-image: linear-gradient(180deg,#0D2A1A, #859e85, #081a10);
-  border-radius: 2rem;
-  border-width: 0.3rem;
-  border-color: #06180e;
+.book-miniature {
+  height: 20rem;
+  width: 15rem;
+  background-image: linear-gradient(180deg, #91ac91, #859e85, #2f4b3b);
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 0.01rem;
+  border-color: #91ac91;
+  filter: contrast(130%);
+  display: flex;
+  flex-direction: column;
   margin-top: 2rem;
-
+  margin-bottom: 2rem;
 }
-.card:hover{
+
+.book-miniature:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px #859e85;
 }
 
-.img-fluid{
-  //object-fit: scale-down;
-
-  max-height: 221px;
-  max-width: 140px;
+.img {
+  object-fit: scale-down;
+  height: 7rem;
+  width: 12rem;
   align-self: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
-.card-body{
+.miniature-body {
   text-align: center;
-  padding-top: 1rem;
+  padding: 0.5rem;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
-.card-title{
-  color: #CBBBA0;
-  text-align: center;
+.miniature-title {
+  color: #0D2A1A;
+  align-self: flex-end;
+  justify-content: center;
+  width: 90%;
+  font-size: larger;
 }
-.card-subtitle{
+
+.miniature-subtitle {
   text-align: center;
   color: #a69680;
 }
-.card-text{
+
+.miniature-text {
   text-align: center;
   color: #91ac91;
 }
-.stars{
-  text-align: center;
+
+.stars {
+  align-self: flex-end;
 }
 
