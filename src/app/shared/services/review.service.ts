@@ -16,19 +16,42 @@ export class ReviewService extends OntimizeEEService {
 
   getUserReview(tusers_user: string, books_book_id: number) {
     const filter = {
-      'tusers_user': tusers_user,
-      'books_book_id': books_book_id
+      'TUSERS_USER': tusers_user,
+      'BOOKS_BOOK_ID': books_book_id
     };
     const columns = [
-      "books_book_id",
-      "review_id",
-      "value",
-      "comment",
-      "tusers_user"
+      "BOOKS_BOOK_ID",
+      "REVIEW_ID",
+      "VALUE",
+      "COMMENT",
+      "TUSERS_USER"
     ];
-    return this.query(filter, columns, 'review').pipe(
-      // tap(x => console.log(x))
-    )
+    return this.query(filter, columns, 'review').pipe();
+  }
+
+  updateUserReview(review_id: number, rating: number, review: string) {
+    const filter = {
+      'review_id': review_id
+    };
+    const data = {
+      'review_id': review_id,
+      "VALUE": parseInt(String(rating)),
+      "COMMENT": review,
+      "REVIEW_DATE": new Date().getTime()
+    };
+    const sqlTypes = {
+      "VALUE": 4,
+      "COMMENT": 12,
+      "REVIEW_DATE": 91
+    };
+    return this.update(filter, data, 'review', sqlTypes).pipe();
+  }
+
+  deleteUserReview(review_id: number) {
+    const filter = {
+      'review_id': review_id
+    };
+    return this.delete(filter, 'review').pipe();
   }
 
   createUserReview(tusers_user:string, books_book_id:number, value: number, comment: string){
@@ -44,9 +67,7 @@ export class ReviewService extends OntimizeEEService {
       "comment":12,
       "tusers_user":12
     };
-    return this.insert(data, 'review', sqlTypes).pipe(
-      // tap(x => console.log(x))
-    )
+    return this.insert(data, 'review', sqlTypes).pipe();
   } 
 
   getRatingValues() {

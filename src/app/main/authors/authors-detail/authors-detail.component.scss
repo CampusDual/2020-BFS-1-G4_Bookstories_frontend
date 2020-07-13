@@ -1,12 +1,85 @@
+.form {
+  background-image: linear-gradient(180deg, #859e85, #2f4b3b, #2b312e);
+  width: 85vw;
+  height: 98vh;
+  padding: 0.5rem;
+}
+
+.author-container {
+  align-self: center;
+  align-content: center;
+  margin-top: 2rem;
+  background-color: #91ac91;
+  border-radius: 1.2rem;
+  filter: contrast(130%);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70vw;
+  box-shadow: 2px 2px 5px #313b36;
+}
+
+
+.content-row-flex {
+  min-width: 60%;
+  max-width: 93%;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-self: center;
+  background-color: #859e85;
+  border-radius: 1rem;
+}
+
+.title-container {
+  padding: 1rem;
+  align-self: center;
+  background-image: linear-gradient(180deg, #2b312e, #859e85, #91ac91);
+  border-radius: 1rem;
+  min-width: 100%;
+}
+
+.details-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  border-radius: 1rem;
+  background-image: linear-gradient(180deg, #91ac91, #859e85, #2b312e);
+  align-self: flex-end;
+  width: 25vw;
+}
+
 .bookc {
-
-    background-color: whitesmoke;
-    box-shadow: 1px 1px 5px #999;
-
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+  background-color: transparent;
 }
 
 .bookc:hover {
+  box-shadow: 1px 1px 5px #0D2A1A;
+}
 
-    box-shadow: 1px 1px 5px #999;
+.books-container {
+  padding: 1rem;
+  border-radius: 0.2rem;
+  min-width: 100%;
+  align-self: flex-start;
+}
 
+@media(max-width: 1025px) {
+  .details-container {
+    width: 100vw;
+  }
+  .content-row-flex {
+    margin: 2rem;
+    justify-content: center;
+    width: 75vw;
+  }
 }

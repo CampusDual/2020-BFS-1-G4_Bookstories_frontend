@@ -1,39 +1,105 @@
-<o-form service="books" entity="booksbase" keys="BOOK_ID"  header-actions="" show-header-navigation="no" editable-detail="no">
-  <o-row title="{{'BOOK'}}">
-    <o-text-input class="input-padding" attr="BOOK_TITLE" title="BOOK_TITLE" read-only="true" fxFlex="40"></o-text-input>      
-  </o-row>
-  <o-row>
-  <o-column>
-    <o-image id="COVER_PAGE" attr="COVER_PAGE" empty-image="assets/images/no-image.png" sql-type="OTHER" read-only="true" show-controls="false" height="240px" width="240px"></o-image>
-  </o-column>
-  <o-column>
-  <o-row>
-        <o-integer-input class="input-padding" attr="BOOK_ID" title="BOOK_ID" read-only="true" width="100px"></o-integer-input>      
-      </o-row>
-      <o-row>
-        <o-text-input class="input-padding" attr="LANGUAGE_NAME" title="LANGUAGE" read-only="true" width="200px"></o-text-input>      
-      </o-row>
-  </o-column>
-  <o-column>
-    <o-row>
-      <o-button attr="raised" type="RAISED" label="LIBRARY" icon="" layout-padding></o-button>
-    </o-row>
-    <o-row>
-      <o-button attr="raised" type="RAISED" label="WISHLIST" layout-padding></o-button>
-    </o-row>
-</o-column>
-</o-row>
-<o-row>
-  <o-list #list attr="bookauthors" service="books" entity="bookauthors" keys="BOOK_ID" parent-keys="BOOK_ID"
-columns="NAME" controls="false" title="AUTHOR" detail-form-route="/main/authors">
-<o-list-item *ngFor="let row of list.dataArray">
-  <o-list-item-text class="authorc" layout-padding #item title="{{ row.NAME }}">
-  </o-list-item-text>
-</o-list-item>
-</o-list>
-</o-row>
-<mat-card class="opinion-card">
-  <mat-card-header>
+<o-form
+        class="form"
+        service="books"
+        entity="booksbase"
+        keys="BOOK_ID"
+        header-actions=""
+        show-header-navigation="no"
+        editable-detail="no">
+    <div class="book-container">
+        <o-row class="title-container">
+            <o-text-input
+                    class="input-padding book-text"
+                    attr="BOOK_TITLE"
+                    title="BOOK_TITLE"
+                    read-only="true"
+                    fxFlex="100"
+            >
+            </o-text-input>
+        </o-row>
+        <o-column class="cover-container">
+            <o-image
+                    class="cover-page"
+                    id="COVER_PAGE"
+                    attr="COVER_PAGE"
+                    empty-image="assets/images/no-image.png"
+                    sql-type="OTHER"
+                    read-only="true"
+                    show-controls="false"
+                    auto-fit="yes"
+            >
+            </o-image>
+            <o-column
+                    class="buttons-container">
+                <o-row>
+                    <o-button
+                            attr="raised"
+                            type="RAISED"
+                            label="LIBRARY"
+                            icon=""
+                            layout-padding>
+                    </o-button>
+                </o-row>
+                <o-row>
+                    <o-button
+                            attr="raised"
+                            type="RAISED"
+                            label="WISHLIST"
+                            layout-padding>
+                    </o-button>
+                </o-row>
+            </o-column>
+        </o-column>
+        <div class="content-row-flex">
+            <o-column class="content-container">
+                <o-row>
+                    <o-integer-input
+                            class="input-padding"
+                            attr="BOOK_ID"
+                            title="BOOK_ID"
+                            read-only="true"
+                    >
+                    </o-integer-input>
+                </o-row>
+                <o-row>
+                    <o-text-input
+                            class="input-padding book-text"
+                            attr="LANGUAGE_NAME"
+                            title="LANGUAGE"
+                            read-only="true"
+                    >
+                    </o-text-input>
+                </o-row>
+            </o-column>
+            <o-column class="authors-container" title="AUTHORS">
+                <o-list #list
+                        attr="bookauthors"
+                        service="books"
+                        entity="bookauthors"
+                        keys="BOOK_ID"
+                        parent-keys="BOOK_ID"
+                        columns="NAME"
+                        controls="false"
+                        title="AUTHOR"
+                        detail-form-route="/main/authors">
+                    <o-list-item *ngFor="let row of list.dataArray">
+                        <o-list-item-text
+                                class="authorc"
+                                layout-padding
+                                #item title="{{ row.NAME }}">
+                        </o-list-item-text>
+                    </o-list-item>
+                </o-list>
+            </o-column>
+        </div>
+    </div>
+
+
+    <mat-card
+            class="opinion-card"
+            style="border-radius: 1rem;box-shadow:2px 2px 2px #313b36;"
+    >
+        <mat-card-header>
     <mat-card-title>{{(editMode ? 'YOUR_REVIEW' : 'REVIEW_THIS_BOOK') | oTranslate}}</mat-card-title>
     <mat-card-subtitle  *ngIf="editMode">
 </mat-card-subtitle>
@@ -49,33 +115,41 @@ columns="NAME" controls="false" title="AUTHOR" detail-form-route="/main/authors"
                read-only="false"
                value-column="rating"
                columns="rating"
-               visible-columns="rating"
+               visible-columns="stars"
                null-selection="no"></o-combo>
       <o-textarea-input #activeReview attr="review" label="BOOK_REVIEW" fxFlex [data]="activeEditReview" required="no"
                         read-only="no"></o-textarea-input>
     </o-form>
   </mat-card-content>
-
-  <mat-card-actions>
-    <button mat-stroked-button (click)="editMode ? createReview() : createReview()"  class="opinion-btn">
-      <mat-icon>update</mat-icon>
-      <span>{{(editMode ? 'UPDATE_REVIEW' : 'CREATE_REVIEW') | oTranslate}}</span>
-    </button>
-    <button *ngIf="editMode" mat-stroked-button (click)="createReview()" class="opinion-btn">
-      <mat-icon>delete</mat-icon>
-      <span>{{'DELETE_REVIEW' |oTranslate}}</span>
-    </button>
-  </mat-card-actions>
-</mat-card>
-<o-row title="{{'REVIEWS'}}">
-  <o-list #listrev attr="bookreviews" service="books" entity="bookreviews" keys="books_book_id" parent-keys="BOOK_ID"
-columns="TUSERS_USER;COMMENT;VALUE" controls="false" title="REVIEWS">
-<div *ngFor="let row of listrev.dataArray">
-  <h5 class="card-title"> {{row.TUSERS_USER}} </h5>
-  <app-star-rating [bookrating]="row.VALUE" ></app-star-rating>
-  <h6 class="card-text">{{row.COMMENT}} </h6>
-  <br>
-</div>
-</o-list>
-</o-row>
+        <mat-card-actions style="display: flex; justify-content: space-between; padding: 1.5rem;">
+            <button *ngIf="editMode" mat-stroked-button (click)="createReview()" class="opinion-btn">
+                <mat-icon>delete</mat-icon>
+                <span>{{'DELETE_REVIEW' |oTranslate}}</span>
+            </button>
+            <button mat-stroked-button (click)="editMode ? createReview() : createReview()" class="opinion-btn">
+                <mat-icon>update</mat-icon>
+                <span>{{(editMode ? 'UPDATE_REVIEW' : 'CREATE_REVIEW') | oTranslate}}</span>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    <div class="text-reviews">
+        <o-row title="{{'REVIEWS'}}">
+            <o-list #listrev
+                    attr="bookreviews"
+                    service="books"
+                    entity="bookreviews"
+                    keys="books_book_id"
+                    parent-keys="BOOK_ID"
+                    columns="TUSERS_USER;COMMENT;VALUE"
+                    controls="false"
+                    title="REVIEWS">
+                <div *ngFor="let row of listrev.dataArray">
+                    <h5 class="card-title"> {{row.TUSERS_USER}} </h5>
+                    <app-star-rating [bookrating]="row.VALUE"></app-star-rating>
+                    <h6 class="card-text">{{row.COMMENT}} </h6>
+                    <br>
+                </div>
+            </o-list>
+        </o-row>
+    </div>
 </o-form>
