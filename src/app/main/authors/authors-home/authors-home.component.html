@@ -1,14 +1,14 @@
 <div fxFlex="100" class="container">
-<!--   <o-table fxFlex-->
-<!--            attr="authorsTable"-->
-<!--            service="authors"-->
-<!--            entity="author"-->
-<!--            keys="id_author"-->
-<!--            columns="id_author;REAL_NAME;nacionality"-->
-<!--            visible-columns="id_author;REAL_NAME" query-rows="20" show-controls="false">-->
-<!--     <o-table-column attr="id_author" title="ID_AUTHOR" type="text"></o-table-column>-->
-<!--     <o-table-column attr="REAL_NAME" title="REAL_NAME" type="text"></o-table-column>-->
-<!--   </o-table>-->
+    <!--   <o-table fxFlex-->
+    <!--            attr="authorsTable"-->
+    <!--            service="authors"-->
+    <!--            entity="author"-->
+    <!--            keys="id_author"-->
+    <!--            columns="id_author;REAL_NAME;nacionality"-->
+    <!--            visible-columns="id_author;REAL_NAME" query-rows="20" show-controls="false">-->
+    <!--     <o-table-column attr="id_author" title="ID_AUTHOR" type="text"></o-table-column>-->
+    <!--     <o-table-column attr="REAL_NAME" title="REAL_NAME" type="text"></o-table-column>-->
+    <!--   </o-table>-->
     <o-grid #authors
             class="grid-container grid"
             attr="authorsGrid"
@@ -24,8 +24,8 @@
             keys="id_author"
             pageable="no"
             query-rows="16">
-        <o-grid-item *ngFor="let item of authors.dataArray" class="grid-item item" >
-            <o-column layout-padding class="container-item item">
+        <o-grid-item *ngFor="let item of authors.dataArray" class="grid-item">
+            <o-column layout-padding class="container-item author">
                 <h4 class="author-name">{{item.REAL_NAME}}</h4>
                 <br/>
                 <p class="nacionality">{{item.nacionality}}</p>

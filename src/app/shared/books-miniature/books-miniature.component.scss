@@ -1,11 +1,11 @@
-.book-miniature{
+.book-miniature {
   height: 20rem;
   width: 15rem;
   background-image: linear-gradient(180deg, #91ac91, #859e85, #2f4b3b);
   border-style: solid;
   border-radius: 1rem;
   border-width: 0.01rem;
-  border-color:  #91ac91;
+  border-color: #91ac91;
   filter: contrast(130%);
   display: flex;
   flex-direction: column;
@@ -13,12 +13,12 @@
   margin-bottom: 2rem;
 }
 
-.book-miniature:hover{
+.book-miniature:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px #859e85;
 }
 
-.img{
+.img {
   object-fit: scale-down;
   height: 7rem;
   width: 12rem;
@@ -26,7 +26,7 @@
   margin-top: 2rem;
 }
 
-.miniature-body{
+.miniature-body {
   text-align: center;
   padding: 0.5rem;
   align-self: center;
@@ -34,7 +34,7 @@
   margin-bottom: 1rem;
 }
 
-.miniature-title{
+.miniature-title {
   color: #0D2A1A;
   align-self: flex-end;
   justify-content: center;
@@ -42,17 +42,17 @@
   font-size: larger;
 }
 
-.miniature-subtitle{
+.miniature-subtitle {
   text-align: center;
   color: #a69680;
 }
 
-.miniature-text{
+.miniature-text {
   text-align: center;
   color: #91ac91;
 }
 
-.stars{
+.stars {
   align-self: flex-end;
 }
 
