@@ -38,26 +38,44 @@ private books : BookModel[]
      
     )
   }
-  createUserOpinion(book_id: number, list_id: number,estado:number) {
+  addBookToList(book_id: number, list_id: number,estado:number) {
     const data = {
-      "book_id": book_id,
+      "BOOKS_BOOK_ID": book_id,
       
-      "list_id": list_id,
-      "estado": estado,
+      "LIST_LIST_ID": list_id,
+      "ESTADO": estado
       
     };
     const sqlTypes = {
-      "book_id": 4,
-      "list_id": 4,
-      "estado": 4
+      "BOOKS_BOOK_ID": 4,
+      "LIST_LIST_ID": 4,
+      "ESTADO": 4
       
     };
-    return this.insert(data, 'addbooktolist', sqlTypes).pipe(
-      // tap(x => console.log(x)),
+    return this.insert(data, 'bookOfList', sqlTypes).pipe(
+     
       
     )
   }
 
-
-
+  getBookAtUserLists(user_: string,book_id :number,type_of_list : number) {
+    const filter = {
+      'tusers_user': user_,
+      "BOOKS_BOOK_ID" : book_id,
+      "TYPE_OF_LIST_IDTYPE_OF_LIST": type_of_list
+    };
+    const columns = [
+      "LIST_ID",
+      "BOOKS_BOOK_ID",
+      "DATE_ADD",
+      "LIB_NAME",
+      "LIST_LIB_ID",
+      "TYPE_OF_LIST_IDTYPE_OF_LIST",
+      "TUSERS_USER"
+    ];
+    return this.query(filter, columns, 'lists').pipe(
+     
+    )
+  }
+  
 }

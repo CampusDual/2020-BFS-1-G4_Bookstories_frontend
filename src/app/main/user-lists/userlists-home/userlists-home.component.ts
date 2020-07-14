@@ -45,6 +45,21 @@ console.log(this.mygrid.getDataArray());
 
 
   }
+  public addlibro(){
+    console.log(".-------")
+    this.listservice.addBookToList(3,1,55)
+    .subscribe(
+      value => console.log(value),
+      error => console.log(error),
+      
+    )
+    
+    
+    
+    
+    
+
+  };
 
 
   getDataArray() {
