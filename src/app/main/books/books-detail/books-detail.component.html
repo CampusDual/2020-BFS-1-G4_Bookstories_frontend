@@ -122,11 +122,11 @@
     </o-form>
   </mat-card-content>
         <mat-card-actions style="display: flex; justify-content: space-between; padding: 1.5rem;">
-            <button *ngIf="editMode" mat-stroked-button (click)="createReview()" class="opinion-btn">
+            <button *ngIf="editMode" mat-stroked-button (click)="deleteReview()" class="opinion-btn">
                 <mat-icon>delete</mat-icon>
                 <span>{{'DELETE_REVIEW' |oTranslate}}</span>
             </button>
-            <button mat-stroked-button (click)="editMode ? createReview() : createReview()" class="opinion-btn">
+            <button mat-stroked-button (click)="editMode ? updateReview() : createReview()" class="opinion-btn">
                 <mat-icon>update</mat-icon>
                 <span>{{(editMode ? 'UPDATE_REVIEW' : 'CREATE_REVIEW') | oTranslate}}</span>
             </button>

@@ -1,0 +1,31 @@
+<div fxLayout="row" fxFill fxLayoutAlign="center center" class="register-outer-container">
+
+  <div fxLayout="column" fxLayoutAlign="center" class="register-inner-container mat-elevation-z1">
+
+    <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+      <div fxLayout="column" fxLayoutAlign="center center" class="logo-container mat-elevation-z4">
+        <img src="./assets/images/ontimize.png">
+      </div>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #email placeholder="{{ 'EMAIL' | oTranslate }}" id="email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password" formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field style="width:100%;">
+        <input matInput class="mat-input" #passwd_conf placeholder="{{ 'PASSWORD_CONFIRM' | oTranslate }}" id="password_confirm" type="password" formControlName="password_confirm">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">{{ 'REGISTER_NOW' | oTranslate }}</button>
+      <div layout-padding></div>
+      <div layout-padding></div>
+    </form>
+  </div>
+</div>
