@@ -84,7 +84,7 @@
                         detail-form-route="/main/authors">
                     <o-list-item *ngFor="let row of list.dataArray">
                         <o-list-item-text
-                                class="authorc"
+                                class="authorc author"
                                 layout-padding
                                 #item title="{{ row.NAME }}">
                         </o-list-item-text>
@@ -97,7 +97,7 @@
 
     <mat-card
             class="opinion-card"
-            style="border-radius: 1rem;box-shadow:2px 2px 2px #313b36;"
+            style="border-radius: 1.5rem;box-shadow:2px 2px 2px #313b36;"
     >
         <mat-card-header>
     <mat-card-title>{{(editMode ? 'YOUR_REVIEW' : 'REVIEW_THIS_BOOK') | oTranslate}}</mat-card-title>
