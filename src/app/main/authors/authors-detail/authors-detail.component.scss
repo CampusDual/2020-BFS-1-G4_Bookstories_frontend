@@ -59,17 +59,18 @@
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0.5rem;
-  background-color: transparent;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(145, 172, 145)));
 }
 
 .bookc:hover {
   box-shadow: 1px 1px 5px #0D2A1A;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(70, 71, 70)));
 }
 
 .books-container {
   padding: 1rem;
   border-radius: 0.2rem;
-  width: 100%;
+  width: 60%;
   align-self: flex-start;
 }
 
