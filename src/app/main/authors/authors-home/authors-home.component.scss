@@ -5,8 +5,8 @@
 }
 
 .author {
-  height: 20rem;
-  width: 15rem;
+  height: 10rem;
+  width: 14rem;
   background-image: linear-gradient(180deg, #91ac91, #859e85, #2f4b3b);
   border-style: solid;
   border-radius: 1rem;
@@ -24,6 +24,7 @@
 .author:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px #859e85;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(186, 213, 186)));
 }
 
 .author-name {
