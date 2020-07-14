@@ -78,7 +78,6 @@ console.log(this.mygrid.getDataArray());
   
 
     return seleccion;
-  }
-
-  
+    
+    }
   }

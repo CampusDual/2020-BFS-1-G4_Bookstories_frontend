@@ -10,22 +10,22 @@ export class RegisterService extends OntimizeEEService {
   constructor(protected injector: Injector) {
     super(injector);
     const conf = this.getDefaultServiceConfiguration();
-    conf['path'] = '/ACCOUNTS';
+    conf['path'] = '/REGISTER';
     this.configureService(conf)
   }
 
   createUserAccount(user_:string, password:string, email: string){
     const data = {
-      "USER_": user_,
-      "PASSWORD": password,
-      "EMAIL": email
+      "user_": user_,
+      "password": password,
+      "email": email
     };
     const sqlTypes = {
       "USER_":12,
       "PASSWORD":12,
       "EMAIL":12
     };
-    return this.insert(data, 'account', sqlTypes).pipe();
+    return this.insert(data, 'register', sqlTypes).pipe();
   } 
 
 }
