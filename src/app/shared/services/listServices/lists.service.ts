@@ -38,21 +38,26 @@ private books : BookModel[]
      
     )
   }
-  getBooksOfLists(list_id: number) {
-    const filter = {
-      'list_id': list_id
+  createUserOpinion(book_id: number, list_id: number,estado:number) {
+    const data = {
+      "book_id": book_id,
+      
+      "list_id": list_id,
+      "estado": estado,
+      
     };
-    const columns = [
-      "list_id",
-      "lib_name",
-      "creation_date",
-      "descripcion",
-      "type_of_list_idtype_of_list",
-      "tusers_user",
-      "name"
-    ];
-    return this.query(filter, columns, 'lists').pipe(
-     
+    const sqlTypes = {
+      "book_id": 4,
+      "list_id": 4,
+      "estado": 4
+      
+    };
+    return this.insert(data, 'addbooktolist', sqlTypes).pipe(
+      // tap(x => console.log(x)),
+      
     )
   }
+
+
+
 }
