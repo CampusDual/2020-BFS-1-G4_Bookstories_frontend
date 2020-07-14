@@ -1,19 +1,13 @@
 @import 'node_modules/@angular/material/theming';
-@mixin register-theme($theme) {
-    $primary: map-get($theme, primary);
-    $accent: map-get($theme, accent);
-    $warn: map-get($theme, warn);
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
-  
+
     .register-outer-container {
-      background-color: mat-color($background, background);
+      background-color: #303030;
   
       .register-inner-container {
-        background-color: mat-color($background, dialog);
+        background-color: #424242;
   
         .logo-container {
-          background-color: mat-color($background, dialog);
+          background-color: #424242;
         }
   
         .session-expired {
@@ -21,7 +15,6 @@
         }
       }
     }
-  }
   .register-outer-container {
     min-height: 640px;
   

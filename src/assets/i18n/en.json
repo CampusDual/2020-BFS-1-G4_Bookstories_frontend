@@ -37,6 +37,9 @@
   "CREATE_REVIEW": "Publish",
   "UPDATE_REVIEW": "Update",
   "DELETE_REVIEW": "Delete",
-  "YOUR_REVIEW": "Your review"
+  "YOUR_REVIEW": "Your review",
+  "EMAIL": "Email",
+  "PASSWORD_CONFIRM": "Confirm password",
+  "REGISTER_NOW": "Register account"
 
 }
