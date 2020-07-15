@@ -3,6 +3,7 @@ import {ReviewService} from "../../../shared/services/review.service";
 import {LoginService} from "ontimize-web-ngx";
 import {ActivatedRoute} from "@angular/router";
 import { Review } from './review';
+import { ListsService } from 'app/shared/services/listServices/lists.service';
 
 
 @Component({
@@ -19,9 +20,20 @@ export class BooksDetailComponent implements OnInit {
   rValues: Array<Object>;
   public activeEditReview: string = ""
   public activeEditRating: number = 0
+  public lists : any[]
+  public databooklists : Map<number,boolean> = new Map();
+
+
+                         //type of list -> list_id asociated for this user
+  public datauserlists : Map<number,number> = new Map();
+ 
+
+
   constructor(private loginService: LoginService,
     private reviewService: ReviewService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private listservice:ListsService) { }
+
 
   ngOnInit() {
 
@@ -29,6 +41,58 @@ export class BooksDetailComponent implements OnInit {
     this.book_id = +this.route.snapshot.paramMap.get('BOOK_ID');
     this.getUserOpinion();
     this.rValues = this.genRatingValues()
+
+
+    this.getbookatUserList(this.book_id).subscribe(value => {
+      if(value!=undefined){
+      this.databooklists.set(ListsService.FAVORITE,false)
+      this.databooklists.set(ListsService.WISH,false)
+     
+      
+        for(var i = 0; i <  value.data.length ; i++){
+          
+        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.FAVORITE){
+          console.log("favorite")
+          this.databooklists.set(ListsService.FAVORITE,true)
+
+
+        }
+        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.WISH){
+          console.log("wish")
+          this.databooklists.set(ListsService.WISH,true)
+          
+
+        }
+        
+
+      }
+      
+      
+      console.log(this.databooklists)
+    }});
+
+
+    this.getUserLists().subscribe(value => {
+      this.lists = value.data
+      if(value!=undefined){
+        for(var i = 0; i <  value.data.length ; i++){
+          this.datauserlists.set(value.data[i]['idtype_of_list'],value.data[i]['list_id'])
+          
+          
+            
+           
+          
+  
+        }
+        console.log("datauser")
+        console.log(this.datauserlists )
+  
+  
+      }
+      
+    })
+
+
 
   }
 
@@ -115,6 +179,40 @@ export class BooksDetailComponent implements OnInit {
   public reloadBook() {
 
     location.reload(); 
+
+  }
+
+ 
+  private getUserLists(){
+    return this.listservice.getUserLists(this.user)
+
+
+
+  }
+
+  public listsButtonAddClicked(list_type: number){
+    if(this.databooklists.get(list_type)){
+      this.listservice.delBookToList(this.book_id,this.datauserlists.get(list_type)).subscribe(
+        value => console.log(value),
+        error => console.log(error),
+        
+      )}
+      else{
+        this.listservice.addBookToList(this.book_id,this.datauserlists.get(list_type),0).subscribe(
+          value => console.log(value),
+          error => console.log(error),
+          
+        )
+  
+      }
+   
+
+  }
+
+  private getbookatUserList(book_id: number){
+    return this.listservice.getBookAtUserLists(this.user,book_id)
+
+
 
   }
 

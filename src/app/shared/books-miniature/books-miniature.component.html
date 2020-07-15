@@ -1,4 +1,7 @@
 <div class="book-miniature">
+
+
+
     <img class="img" [src]="book.bookCover" alt="{{book.bookTitle}} Image">
     <div class="miniature-body">
         <b class="miniature-title"> {{book.bookTitle}}</b>
@@ -6,6 +9,24 @@
         <div class="stars">
             <app-star-rating [bookrating]=book.bookRating></app-star-rating>
         </div>
+        <button mat-icon-button  style="inline-size: auto;" >
+    
+            <mat-icon style="color: white;" >
+              {{showIcon(0)}}
+            </mat-icon>
+           
+         
+        </button>
+        <button mat-icon-button  style="inline-size: auto;" >
+    
+            <mat-icon style="color: white;" >
+              {{showIcon(1)}}
+            </mat-icon>
+           
+         
+        </button>
+
+        
     </div>
 </div>
 
