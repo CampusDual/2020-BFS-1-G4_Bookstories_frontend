@@ -42,6 +42,8 @@
   "YOUR_REVIEW": "Your review",
   "EMAIL": "Email",
   "PASSWORD_CONFIRM": "Confirm password",
-  "REGISTER_NOW": "Register account"
+  "REGISTER_NOW": "Register account",
+  "DATE_ADD" : "Date",
+  "MYLIST" : "Lists"
 
 }

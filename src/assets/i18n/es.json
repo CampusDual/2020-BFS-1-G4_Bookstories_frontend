@@ -43,5 +43,6 @@
   "EMAIL": "Email",
   "PASSWORD_CONFIRM": "Confirmar contraseña",
   "REGISTER_NOW": "Registrar cuenta",
-  "DATE_ADD" : "Fecha"
+  "DATE_ADD" : "Fecha",
+  "MYLIST" : "Listas"
 }
