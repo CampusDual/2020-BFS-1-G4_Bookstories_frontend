@@ -78,12 +78,12 @@
                         attr="bookauthors"
                         service="books"
                         entity="bookauthors"
-                        keys="BOOK_ID"
+                        keys="ID_AUTHOR"
                         parent-keys="BOOK_ID"
                         columns="NAME"
                         controls="false"
                         title="AUTHOR"
-                        detail-form-route="/main/authors">
+                        detail-form-route="/main/authors/">
                     <o-list-item *ngFor="let row of list.dataArray">
                         <o-list-item-text
                                 class="authorc author"

@@ -52,10 +52,11 @@ columns="LIST_ID" controls="false" title="listas">
           grid-item-height="500px"
           gutter-size="1rem"
           sortable-columns="DATE_ADD"
-          keys="LIST_LIST_ID"
+          keys="BOOK_ID"
           parent-keys="LIST_LIST_ID:combo-editable[key]"
           pageable="no"
           refresh-button="yes"
+          detail-form-route="/main/books/"
           >
       <o-grid-item *ngFor="let item of booksgrid.dataArray  ">
           <o-column layout-padding class="container-item">

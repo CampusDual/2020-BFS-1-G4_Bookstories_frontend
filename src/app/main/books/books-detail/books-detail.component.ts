@@ -44,7 +44,7 @@ export class BooksDetailComponent implements OnInit {
     this.getUserOpinion();
     this.rValues = this.genRatingValues()
 
-    this.refreshdata()
+    this.refreshdataoflists()
 
 
 
@@ -143,7 +143,11 @@ export class BooksDetailComponent implements OnInit {
 
 
   }
-  public refreshdata(){
+/*
+* Method to get list data from the service.
+*/
+
+  public refreshdataoflists(){
 
     
     this.getbookatUserList(this.book_id).subscribe(value => {
@@ -202,20 +206,23 @@ export class BooksDetailComponent implements OnInit {
     })
 
   }
+  /*
+  * Method callable from the list buttons. authomatically selects add or delete the book from the list.
+  */
   public listsButtonAddClicked(list_type: number){
-    console.log("-------------------------------------------------------")
-    console.log("listtype--"+list_type+"  "+this.databooklists.get(list_type))
+    //console.log("-------------------------------------------------------")
+    //console.log("listtype--"+list_type+"  "+this.databooklists.get(list_type))
     if(this.databooklists.get(list_type)){
-      console.log("eliminar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
+      //console.log("eliminar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
       this.listservice.delBookToList(this.book_id,this.datauserlists.get(list_type)).subscribe(
-        value => {console.log(value); this.refreshdata()},
+        value => {console.log(value); this.refreshdataoflists()},
         error => console.log(error),
         
       )}
       else{
-        console.log("agregar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
+        //console.log("agregar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
         this.listservice.addBookToList(this.book_id,this.datauserlists.get(list_type),0).subscribe(
-          value => {console.log(value); this.refreshdata()},
+          value => {console.log(value); this.refreshdataoflists()},
           error => console.log(error),
           
         )
@@ -225,12 +232,12 @@ export class BooksDetailComponent implements OnInit {
      
       
      
-      console.log("post book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
+     // console.log("post book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
       
 
       
    
-      console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+      // console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   }
 
   private getbookatUserList(book_id: number){
@@ -239,6 +246,9 @@ export class BooksDetailComponent implements OnInit {
 
 
   }
+  /*
+  * Method to show the text need in the list buttons  
+  */
   public showText(tipo :number) {
     var texto : string = ""
     switch(tipo){
