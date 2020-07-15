@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegisterService } from "../../shared/services/register.service"
+import { LoginService } from 'ontimize-web-ngx';
 
 
 @Component({
@@ -11,8 +12,13 @@ import { RegisterService } from "../../shared/services/register.service"
 export class RegisterHomeComponent implements OnInit {
   
   registerForm: FormGroup;
+  usernameexist = false;
+  mailexists = false;
+  pdoesnt_match = false;
 
-  constructor(private registerService: RegisterService) {}
+  constructor(private registerService: RegisterService) {
+
+  }
 
   ngOnInit() {
 
@@ -32,11 +38,20 @@ export class RegisterHomeComponent implements OnInit {
   createAccount() {
 
     const userName = this.registerForm.value['username'];
+    const email = this.registerForm.value['email'];
+    const password = this.registerForm.value['password'];
+    const password_confirm = this.registerForm.value['password_confirm'];
 
-    alert(userName);
+    if (password == password_confirm){
+      this.pdoesnt_match = false;
+      this.registerService.createUserAccount(userName, password, email)
+      .subscribe();
 
-    /*this.registerService.createUserAccount(); 
-    .subscribe();*/
+  }else {
+    
+    this.pdoesnt_match = true;
+
+  }
 
   }
 
