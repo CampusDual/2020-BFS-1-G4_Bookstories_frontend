@@ -36,7 +36,7 @@
                     <o-button
                             attr="raised"
                             type="RAISED"
-                            label="LIBRARY"
+                            label="{{showText(1)}}"
                             icon=""
                             layout-padding (click)="listsButtonAddClicked(1,$event)">
                     </o-button>
@@ -45,7 +45,7 @@
                     <o-button
                             attr="raised"
                             type="RAISED"
-                            label="WISHLIST"
+                            label="{{showText(0)}}"
                             (click)="listsButtonAddClicked(0,$event)"
                             layout-padding>
                     </o-button>
