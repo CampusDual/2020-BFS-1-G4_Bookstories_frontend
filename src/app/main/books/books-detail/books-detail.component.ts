@@ -4,6 +4,8 @@ import {LoginService} from "ontimize-web-ngx";
 import {ActivatedRoute} from "@angular/router";
 import { Review } from './review';
 import { ListsService } from 'app/shared/services/listServices/lists.service';
+import { appInitializerFactory } from 'ontimize-web-ngx/ontimize/config/o-providers';
+import { throwMatDialogContentAlreadyAttachedError } from '@angular/material';
 
 
 @Component({
@@ -42,59 +44,7 @@ export class BooksDetailComponent implements OnInit {
     this.getUserOpinion();
     this.rValues = this.genRatingValues()
 
-    console.log("----"+this.book_id)
-    this.getbookatUserList(this.book_id).subscribe(value => {
-      console.log("test2")
-     console.log(value)
-      if(value!=undefined){
-
-      this.databooklists.set(ListsService.FAVORITE,false)
-      this.databooklists.set(ListsService.WISH,false)
-     
-      
-        for(var i = 0; i <  value.data.length ; i++){
-          
-          
-        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.FAVORITE){
-          console.log("favorite")
-          this.databooklists.set(ListsService.FAVORITE,true)
-
-
-        }
-        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.WISH){
-          console.log("wish")
-          this.databooklists.set(ListsService.WISH,true)
-          
-
-        }
-        
-
-      }
-      
-      
-      
-    }});
-
-
-    this.getUserLists().subscribe(value => {
-      this.lists = value.data
-      if(value!=undefined){
-        for(var i = 0; i <  value.data.length ; i++){
-          this.datauserlists.set(value.data[i]['idtype_of_list'],value.data[i]['list_id'])
-          
-          
-            
-           
-          
-  
-        }
-        console.log("datauser")
-        console.log(this.datauserlists )
-  
-  
-      }
-      
-    })
+    this.refreshdata()
 
 
 
@@ -193,28 +143,94 @@ export class BooksDetailComponent implements OnInit {
 
 
   }
+  public refreshdata(){
 
+    
+    this.getbookatUserList(this.book_id).subscribe(value => {
+      console.log("test2")
+     console.log(value)
+     this.databooklists.clear()
+     this.databooklists.set(ListsService.FAVORITE,false)
+      this.databooklists.set(ListsService.WISH,false)
+      console.log(value)
+      if(value!=undefined){
+        
+        for(var i = 0; i <  value.data.length ; i++){
+          
+          
+        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.FAVORITE){
+          console.log("favorite")
+          this.databooklists.set(ListsService.FAVORITE,true)
+
+
+        }
+        if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.WISH){
+          console.log("wish")
+          this.databooklists.set(ListsService.WISH,true)
+          
+
+        }
+        
+
+      }
+      
+      
+      
+    }});
+
+
+    this.getUserLists().subscribe(value => {
+      this.lists = value.data
+      this.datauserlists.clear()
+      if(value!=undefined){
+        
+        for(var i = 0; i <  value.data.length ; i++){
+          this.datauserlists.set(value.data[i]['idtype_of_list'],value.data[i]['list_id'])
+          
+          
+            
+           
+          
+  
+        }
+        console.log("datauser")
+        console.log(this.datauserlists )
+  
+  
+      }
+      
+    })
+
+  }
   public listsButtonAddClicked(list_type: number){
+    console.log("-------------------------------------------------------")
     console.log("listtype--"+list_type+"  "+this.databooklists.get(list_type))
     if(this.databooklists.get(list_type)){
+      console.log("eliminar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
       this.listservice.delBookToList(this.book_id,this.datauserlists.get(list_type)).subscribe(
-        value => console.log(value),
+        value => {console.log(value); this.refreshdata()},
         error => console.log(error),
         
       )}
       else{
+        console.log("agregar book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
         this.listservice.addBookToList(this.book_id,this.datauserlists.get(list_type),0).subscribe(
-          value => console.log(value),
+          value => {console.log(value); this.refreshdata()},
           error => console.log(error),
           
         )
   
       }
-      console.log("bbb")
-      this.ngOnInit()
+      
+     
+      
+     
+      console.log("post book id ="+this.book_id+" list type= "+list_type+" list= "+this.datauserlists.get(list_type)+" booklist= "+this.databooklists.get(list_type))
+      
+
       
    
-
+      console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   }
 
   private getbookatUserList(book_id: number){
