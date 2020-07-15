@@ -9,7 +9,7 @@
         <div class="stars">
             <app-star-rating [bookrating]=book.bookRating></app-star-rating>
         </div>
-        <button mat-icon-button  style="inline-size: auto;" >
+        <button mat-icon-button  style="inline-size: auto;" (click)="listsButtonAddClicked(0,$event)">
     
             <mat-icon style="color: white;" >
               {{showIcon(0)}}
@@ -17,7 +17,7 @@
            
          
         </button>
-        <button mat-icon-button  style="inline-size: auto;" >
+        <button mat-icon-button  style="inline-size: auto;" (click)="listsButtonAddClicked(1,$event)" >
     
             <mat-icon style="color: white;" >
               {{showIcon(1)}}
