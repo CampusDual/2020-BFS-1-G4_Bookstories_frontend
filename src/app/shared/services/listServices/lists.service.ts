@@ -7,6 +7,8 @@ import { OntimizeEEService } from 'ontimize-web-ngx';
 })
 
 export class ListsService extends OntimizeEEService {
+  public static FAVORITE :number = 0;
+  public static WISH :number = 1;
   private lists: any[]
 private books : BookModel[]
 
@@ -38,26 +40,64 @@ private books : BookModel[]
      
     )
   }
-  createUserOpinion(book_id: number, list_id: number,estado:number) {
+  addBookToList(book_id: number, list_id: number,estado:number) {
     const data = {
-      "book_id": book_id,
+      "BOOKS_BOOK_ID": book_id,
       
-      "list_id": list_id,
-      "estado": estado,
+      "LIST_LIST_ID": list_id,
+      "ESTADO": estado
       
     };
     const sqlTypes = {
-      "book_id": 4,
-      "list_id": 4,
-      "estado": 4
+      "BOOKS_BOOK_ID": 4,
+      "LIST_LIST_ID": 4,
+      "ESTADO": 4
       
     };
-    return this.insert(data, 'addbooktolist', sqlTypes).pipe(
-      // tap(x => console.log(x)),
+    return this.insert(data, 'bookOfList', sqlTypes).pipe(
+     
+      
+    )
+  }
+  delBookToList(book_id: number, list_id: number) {
+    const data = {
+      "BOOKS_BOOK_ID": book_id,
+      
+      "LIST_LIST_ID": list_id
+     
+      
+    };
+    const sqlTypes = {
+      "BOOKS_BOOK_ID": 4,
+      "LIST_LIST_ID": 4,
+      "ESTADO": 4
+      
+    };
+    return this.delete(data, 'bookOfList', sqlTypes).pipe(
+     
       
     )
   }
 
+  getBookAtUserLists(user_: string,book_id :number) {
+    const filter = {
+      'TUSERS_USER': user_,
+      "BOOKS_BOOK_ID" : book_id,
+    
+    };
+    const columns = [
+      "LIST_ID",
+      "BOOKS_BOOK_ID",
+      "DATE_ADD",
+      "LIB_NAME",
+      "LIST_LIB_ID",
+      "TYPE_OF_LIST_IDTYPE_OF_LIST",
+      "TUSERS_USER"
+    ];
+    
 
-
+    return this.query(filter, columns, 'bookAtList').pipe(
+    )
+  }
+  
 }

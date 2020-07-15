@@ -32,11 +32,11 @@ export class UserlistsHomeComponent implements OnInit {
   ngAfterViewInit() {
     
     this.myOption.onChange.subscribe(event => {
-      console.log("onchangess")
-     // this.mygrid.reloadData()
+     
       this.mygrid.initialize()
+      /*
 console.log(this.mygrid.getDataArray());
-      console.log(this.mygrid.getParentKeysValues());
+      console.log(this.mygrid.getParentKeysValues());*/
     });}
 
   private getUserLists(){
@@ -45,6 +45,21 @@ console.log(this.mygrid.getDataArray());
 
 
   }
+  public addlibro(){
+    console.log(".-------")
+    this.listservice.addBookToList(3,1,55)
+    .subscribe(
+      value => console.log(value),
+      error => console.log(error),
+      
+    )
+    
+    
+    
+    
+    
+
+  };
 
 
   getDataArray() {

@@ -32,12 +32,13 @@
             <o-column
                     class="buttons-container">
                 <o-row>
+                    
                     <o-button
                             attr="raised"
                             type="RAISED"
                             label="LIBRARY"
                             icon=""
-                            layout-padding>
+                            layout-padding (click)="listsButtonAddClicked(1,$event)">
                     </o-button>
                 </o-row>
                 <o-row>
@@ -45,6 +46,7 @@
                             attr="raised"
                             type="RAISED"
                             label="WISHLIST"
+                            (click)="listsButtonAddClicked(0,$event)"
                             layout-padding>
                     </o-button>
                 </o-row>
