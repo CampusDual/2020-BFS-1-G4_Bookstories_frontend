@@ -1,11 +1,11 @@
 .book-miniature {
   height: 20rem;
   width: 15rem;
-  background-image: linear-gradient(180deg, #91ac91, #859e85, #2f4b3b);
+  background-image: linear-gradient(180deg, #91ac91, #859e85, transparent);
   border-style: solid;
   border-radius: 1rem;
   border-width: 0.01rem;
-  border-color: #91ac91;
+  border-color: #b5cdb5;
   filter: contrast(130%);
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
 
 .miniature-text {
   text-align: center;
-  color: #91ac91;
+  color: #b5cdb5;
 }
 
 .stars {

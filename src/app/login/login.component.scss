@@ -1,5 +1,6 @@
 .login-outer-container {
   min-height: 640px;
+  background-image: linear-gradient(180deg, #2f4b3b, #2f4b3b, #2b312e);
 
   .login-inner-container {
     position: absolute;
@@ -9,7 +10,11 @@
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     width: 450px;
-    padding: 8em 5em 5em;
+    padding: 6em 5em 5em;
+    background-color: #859e85;
+    box-shadow: 2px 2px 5px #313b36;
+    border-radius: 1.5rem;
+    animation: appears 2s;
 
     h1 {
       text-align: center;
@@ -24,11 +29,17 @@
       top: -75px;
       left: 50%;
       -webkit-transform: translate(-50%, 0%);
+      border-style: solid;
+      border-width: 0.1rem;
+      border-color: #829982;
+      background-color: lightcyan;
 
-      img {
-        max-height: 125px;
-        max-width: 125px;
+      .logo {
+        width: 45%;
+        animation: logo-animation 1s 1s;
+        animation-fill-mode: forwards;
       }
+
     }
 
     .session-expired {
@@ -51,5 +62,96 @@
       font-weight: bold;
     }
 
+    .logomarca{
+      margin-bottom: 2rem;
+    }
+
   }
+}
+
+@keyframes logo-animation {
+  0% {
+    width: 45%;
+  }
+  25%{
+    width: 50%;
+  }
+  50%{
+    width: 55%;
+  }
+  75%{
+    width: 50%;
+  }
+  100% {
+   width: 45%;
+  }
+}
+
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logomarca:hover{
+  animation: appears 2s;
+}
+
+.b {
+  animation: appears 0.4 2s;
+}
+
+.o1 {
+  animation: appears 0.4 2.4s;
+}
+
+.o2 {
+  animation: appears 0.4 2.8s;
+}
+
+.k {
+  animation: appears 0.4 3.2s;
+}
+
+.s1 {
+  animation: appears 0.4 4s;
+  fill: #CBBBA0;
+}
+
+.t {
+  animation: appears 0.4 4.4s;
+  fill: #CBBBA0;
+}
+
+.o3 {
+  animation: appears 0.4 4.8s;
+  fill: #CBBBA0;
+}
+
+.r {
+  animation: appears 0.4 5.2s;
+  fill: #CBBBA0;
+}
+
+.i {
+  animation: appears 0.4 5.6s;
+  fill: #CBBBA0;
+}
+
+.e {
+  animation: appears 0.4 6s;
+  fill: #CBBBA0;
+}
+
+.s2 {
+  animation: appears 0.4 6.4s;
+  fill: #CBBBA0;
+}
+
+.login-inner-container:hover{
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(96, 102, 96)));
 }

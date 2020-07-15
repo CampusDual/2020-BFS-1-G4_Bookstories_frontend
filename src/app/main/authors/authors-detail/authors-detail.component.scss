@@ -19,6 +19,9 @@
   justify-content: space-between;
   width: 70vw;
   box-shadow: 2px 2px 5px #313b36;
+  opacity: 0;
+  animation: appears 2s 0.5s;
+  animation-fill-mode: forwards;
 }
 
 
@@ -46,13 +49,21 @@
 }
 
 .details-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
   border-radius: 1rem;
   background-image: linear-gradient(180deg, #91ac91, #859e85, #2b312e);
-  align-self: flex-end;
+  padding-left: 1rem;
+  padding-bottom: 8rem;
   width: 25vw;
+  align-self: flex-end;
+}
+
+.name-detail{
+  width: 90%;
+
+}
+.nacionality-detail{
+  width: 90%;
+
 }
 
 .bookc {
@@ -82,5 +93,14 @@
     margin: 2rem;
     justify-content: center;
     width: 75vw;
+  }
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
