@@ -5,10 +5,10 @@ columns="LIST_ID" controls="false" title="listas">
   {{bookitem['LIST_ID']}}
   </div>
   </o-list> -->
-  <o-button attr="basic" type="BASIC" label="BASIC" (click)="addlibro($event)"></o-button>
-
+<!--  <o-button class="display-none" attr="basic" type="BASIC" label="BASIC" (click)="addlibro($event)"></o-button>-->
+descaaceptarme
  
-<div fxFlex>
+<div fxFlex class="container">
   <o-form attr="formulario" detect-changes-on-blur="yes" header-actions ="R" header-mode="floating">
 
 
@@ -55,6 +55,7 @@ columns="LIST_ID" controls="false" title="listas">
           parent-keys="LIST_LIST_ID:combo-editable[key]"
           pageable="no"
           refresh-button="yes"
+           detail-form-route="/main/books/"
           >
       <o-grid-item *ngFor="let item of booksgrid.dataArray  ">
           <o-column layout-padding class="container-item">

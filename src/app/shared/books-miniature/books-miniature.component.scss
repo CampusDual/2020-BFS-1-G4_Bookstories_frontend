@@ -16,7 +16,7 @@
 .book-miniature:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px #859e85;
-  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(186, 213, 186)));
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgb(186, 213, 186)));
 
 }
 
@@ -25,28 +25,25 @@
   height: 7rem;
   width: 12rem;
   align-self: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .miniature-body {
   text-align: center;
-  padding: 0.5rem;
   align-self: center;
   margin-top: auto;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .miniature-title {
   color: #0D2A1A;
-  align-self: flex-end;
-  justify-content: center;
+  align-self: center;
   width: 90%;
-  font-size: larger;
-}
-
-.miniature-subtitle {
-  text-align: center;
-  color: #a69680;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 .miniature-text {
@@ -54,7 +51,27 @@
   color: #b5cdb5;
 }
 
+.miniature-rating {
+  margin-top: auto;
+}
+
 .stars {
-  align-self: flex-end;
+}
+
+.button {
+  background-color: #859e85;
+  margin: 0.2rem;
+}
+
+.button:hover {
+  .icon {
+    color: #0D2A1A;
+  }
+
+}
+
+.icon {
+  color: #b5cdb5;
+  align-self: center;
 }
 
