@@ -16,6 +16,8 @@
 .book-miniature:hover {
   transform: translateY(-10px);
   box-shadow: 0 3px #859e85;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(186, 213, 186)));
+
 }
 
 .img {
