@@ -22,6 +22,8 @@
   "NAME": "Autor",
   "LIBRARY": "Añadir a biblioteca",
   "WISHLIST": "Añadir a lista de deseos",
+  "LIBRARY_CHECK": "Eliminar de biblioteca",
+  "WISHLIST_CHECK": "Eliminar de la lista de deseos",
   "AUTHOR": "Autor",
   "BOOK": "Libro",
   "REVIEWS": "Reseñas",

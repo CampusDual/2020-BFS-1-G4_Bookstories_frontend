@@ -22,6 +22,8 @@
   "NAME": "Name",
   "LIBRARY": "Add to Library",
   "WISHLIST": "Add to WishList",
+  "LIBRARY_CHECK": "Delete from Library",
+  "WISHLIST_CHECK": "Delete from WishList",
   "AUTHOR": "Author",
   "BOOK": "Book",
   "REVIEWS": "Reviews",

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
 import {ReviewService} from "../../../shared/services/review.service";
 import {LoginService} from "ontimize-web-ngx";
 import {ActivatedRoute} from "@angular/router";
@@ -21,11 +21,11 @@ export class BooksDetailComponent implements OnInit {
   public activeEditReview: string = ""
   public activeEditRating: number = 0
   public lists : any[]
-  public databooklists : Map<number,boolean> = new Map();
+  @Input() public databooklists : Map<number,boolean> = new Map();
 
 
                          //type of list -> list_id asociated for this user
-  public datauserlists : Map<number,number> = new Map();
+   @Input() public datauserlists : Map<number,number> = new Map();
  
 
 
@@ -42,14 +42,18 @@ export class BooksDetailComponent implements OnInit {
     this.getUserOpinion();
     this.rValues = this.genRatingValues()
 
-
+    console.log("----"+this.book_id)
     this.getbookatUserList(this.book_id).subscribe(value => {
+      console.log("test2")
+     console.log(value)
       if(value!=undefined){
+
       this.databooklists.set(ListsService.FAVORITE,false)
       this.databooklists.set(ListsService.WISH,false)
      
       
         for(var i = 0; i <  value.data.length ; i++){
+          
           
         if(value.data[i]['TYPE_OF_LIST_IDTYPE_OF_LIST'] == ListsService.FAVORITE){
           console.log("favorite")
@@ -68,7 +72,7 @@ export class BooksDetailComponent implements OnInit {
       }
       
       
-      console.log(this.databooklists)
+      
     }});
 
 
@@ -191,6 +195,7 @@ export class BooksDetailComponent implements OnInit {
   }
 
   public listsButtonAddClicked(list_type: number){
+    console.log("listtype--"+list_type+"  "+this.databooklists.get(list_type))
     if(this.databooklists.get(list_type)){
       this.listservice.delBookToList(this.book_id,this.datauserlists.get(list_type)).subscribe(
         value => console.log(value),
@@ -205,6 +210,9 @@ export class BooksDetailComponent implements OnInit {
         )
   
       }
+      console.log("bbb")
+      this.ngOnInit()
+      
    
 
   }
@@ -215,5 +223,27 @@ export class BooksDetailComponent implements OnInit {
 
 
   }
+  public showText(tipo :number) {
+    var texto : string = ""
+    switch(tipo){
+      case 0: {
+        if(this.databooklists.get(0)){
+          texto = "LIBRARY_CHECK"
+        }else{
+          texto = "LIBRARY"
+        }
+        break;
+      }
+      case 1: {
+        if(this.databooklists.get(1)){
+          texto = "WISHLIST_CHECK"
+        }else{
+          texto = "WISHLIST"
+        }
+        break;
+      }
 
+    }
+    return texto
+  }
 }

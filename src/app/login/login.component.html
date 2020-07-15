@@ -117,7 +117,7 @@
             </g>
             </svg>
             <p class="session-expired" *ngIf="sessionExpired">{{ 'ERROR_SESSION_EXPIRED' | oTranslate }}</p>
-
+          
             <mat-form-field style="width:100%;">
                 <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username"
                        formControlName="username">
@@ -135,6 +135,5 @@
                     <span class="dark_text">{{ 'REGISTER' | oTranslate }}</span> <a href="register"> {{ 'CLICK_HERE' | oTranslate}}</a>
                   </div>-->
         </form>
-
     </div>
 </div>

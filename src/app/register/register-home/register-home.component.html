@@ -7,6 +7,10 @@
         <img src="./assets/images/ontimize.png">
       </div>
 
+      <p class="session-expired" *ngIf="usernameexist">{{ 'USERNAMEEXISTS' | oTranslate }}</p>
+      <p class="session-expired" *ngIf="mailexists">{{ 'MAILEXISTS' | oTranslate }}</p>
+      <p class="session-expired" *ngIf="pdoesnt_match">{{ 'PDOESNT_MATCH' | oTranslate }}</p>
+
       <mat-form-field style="width:100%;">
         <input matInput class="mat-input" #user placeholder="{{ 'USERNAME' | oTranslate }}" id="username" formControlName="username">
       </mat-form-field>
