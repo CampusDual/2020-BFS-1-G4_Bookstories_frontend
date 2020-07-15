@@ -1,5 +1,5 @@
 .form {
-  background-image: linear-gradient(180deg, #859e85, #2f4b3b, #2b312e);
+  background-image: linear-gradient(180deg, #859e85, #2f4b3b, #2b312e, #2b312e);
   width: 85vw;
   height: 98vh;
   padding: 0.5rem;
@@ -10,7 +10,7 @@
   align-content: center;
   margin-top: 2rem;
   background-color: #91ac91;
-  border-radius: 1.5rem;
+  border-radius: 1.7rem;
   filter: contrast(130%);
   display: flex;
   flex-direction: row;
@@ -19,6 +19,9 @@
   justify-content: space-between;
   width: 70vw;
   box-shadow: 2px 2px 5px #313b36;
+  opacity: 0;
+  animation: appears 2s 0.5s;
+  animation-fill-mode: forwards;
 }
 
 .content-row-flex {
@@ -51,16 +54,16 @@
   width: 25vw;
 }
 
+.buttons-container {
+  padding: 1rem;
+  align-self: center;
+}
+
 .content-container {
   margin-bottom: 1rem;
   padding: 1rem;
   align-self: flex-start;
-  width: 50%;
-}
-
-.buttons-container {
-  padding: 1rem;
-  align-self: center;
+  width: 40%;
 }
 
 .authors-container {
@@ -73,14 +76,17 @@
 .opinion-card {
   background-color: #859e85;
   border-style: solid;
-  border-color: #91ac91;
-  border-width: 0.5rem;
-  width: 65vw;
+  border-color:  #91ac91;
+  border-width: 0.09rem;
+  width: 60vw;
   filter: contrast(130%);
   padding: 2.5rem;
   align-self: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  opacity: 0;
+  animation: appears 2s 1s;
+  animation-fill-mode: forwards;
 }
 
 .text-reviews {
@@ -88,13 +94,16 @@
   align-self: center;
   width: 60vw;
   filter: contrast(130%);
+  font-size: larger;
 }
 
 .authorc {
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(145, 172, 145)));
 }
 
 .authorc:hover {
   box-shadow: 1px 1px 5px #0D2A1A;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(70, 71, 70)));
 }
 
 @media(max-width: 1025px) {
@@ -105,5 +114,14 @@
     margin: 2rem;
     justify-content: center;
     width: 75vw;
+  }
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

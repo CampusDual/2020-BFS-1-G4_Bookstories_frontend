@@ -19,6 +19,9 @@
   justify-content: space-between;
   width: 70vw;
   box-shadow: 2px 2px 5px #313b36;
+  opacity: 0;
+  animation: appears 2s 0.5s;
+  animation-fill-mode: forwards;
 }
 
 
@@ -46,30 +49,39 @@
 }
 
 .details-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
   border-radius: 1rem;
   background-image: linear-gradient(180deg, #91ac91, #859e85, #2b312e);
-  align-self: flex-end;
+  padding-left: 1rem;
+  padding-bottom: 8rem;
   width: 25vw;
+  align-self: flex-end;
+}
+
+.name-detail{
+  width: 90%;
+
+}
+.nacionality-detail{
+  width: 90%;
+
 }
 
 .bookc {
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 0.5rem;
-  background-color: transparent;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(145, 172, 145)));
 }
 
 .bookc:hover {
   box-shadow: 1px 1px 5px #0D2A1A;
+  background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgb(70, 71, 70)));
 }
 
 .books-container {
   padding: 1rem;
   border-radius: 0.2rem;
-  width: 100%;
+  width: 60%;
   align-self: flex-start;
 }
 
@@ -81,5 +93,14 @@
     margin: 2rem;
     justify-content: center;
     width: 75vw;
+  }
+}
+
+@keyframes appears {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
