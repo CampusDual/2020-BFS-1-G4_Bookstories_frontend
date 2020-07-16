@@ -5,10 +5,12 @@ columns="LIST_ID" controls="false" title="listas">
   {{bookitem['LIST_ID']}}
   </div>
   </o-list> -->
-<!--  <o-button class="display-none" attr="basic" type="BASIC" label="BASIC" (click)="addlibro($event)"></o-button>-->
+
+
  
-<div fxFlex class="container">
-  <o-form attr="formulario" detect-changes-on-blur="yes" header-actions ="R" header-mode="floating">
+<div fxFlex="100" class="container">
+  <app-header></app-header>
+  <o-form attr="formulario" detect-changes-on-blur="yes" show-header="no" header-actions ="" header-mode="none">
 
 
     <o-combo #COMBOLISTAS 
@@ -50,11 +52,11 @@ columns="LIST_ID" controls="false" title="listas">
           grid-item-height="500px"
           gutter-size="1rem"
           sortable-columns="DATE_ADD"
-          keys="LIST_LIST_ID"
+          keys="BOOK_ID"
           parent-keys="LIST_LIST_ID:combo-editable[key]"
           pageable="no"
           refresh-button="yes"
-           detail-form-route="/main/books/"
+          detail-form-route="/main/books/"
           >
       <o-grid-item *ngFor="let item of booksgrid.dataArray  ">
           <o-column layout-padding class="container-item">

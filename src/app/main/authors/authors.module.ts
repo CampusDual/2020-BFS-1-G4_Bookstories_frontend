@@ -5,12 +5,16 @@ import { AuthorsRoutingModule } from './authors-routing.module';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AuthorsHomeComponent } from './authors-home/authors-home.component';
 import { AuthorsDetailComponent } from './authors-detail/authors-detail.component';
+import { HeaderComponent } from 'app/shared/header/header.component';
+import { SharedModule } from 'app/shared/shared.module';
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     OntimizeWebModule,
-    AuthorsRoutingModule
+    AuthorsRoutingModule,
+    
   ],
   declarations: [
     AuthorsHomeComponent,
