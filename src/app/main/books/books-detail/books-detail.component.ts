@@ -73,9 +73,12 @@ export class BooksDetailComponent implements OnInit {
     const ratingElement: any = this.aValue
     const rating: string = ratingElement.value.value
     this.reviewService.createUserReview(this.loginService.getSessionInfo().user, this.book_id, +rating, review)
-    .subscribe();
+    .subscribe(
+      value => {console.log(value);this.reloadBook();},
+      error =>  {console.log(error);this.reloadBook();}
+    );
 
-    this.reloadBook();
+    
 
   }
 
@@ -85,11 +88,10 @@ export class BooksDetailComponent implements OnInit {
 
   deleteReview() {
     this.reviewService.deleteUserReview(this.review.REVIEW_ID)
-    .subscribe(),
-      () => {
-        this.getUserOpinion()
-      }
-    this.reloadBook();
+    .subscribe(
+      
+      value => {console.log(value);this.reloadBook();},
+      error => {console.log(error);this.reloadBook();})
   }
 
   updateReview() {
@@ -98,11 +100,8 @@ export class BooksDetailComponent implements OnInit {
     const ratingElement: any = this.aValue
     const rating: string = ratingElement.value.value
     this.reviewService.updateUserReview(this.review.REVIEW_ID, +rating, review)
-    .subscribe(),
-      () =>{
-        this.getUserOpinion()
-      }
-    this.reloadBook();
+    .subscribe(value => {console.log(value);this.reloadBook();},
+    error => {console.log(error);this.reloadBook();})
   }
 
   genRatingValues() {
