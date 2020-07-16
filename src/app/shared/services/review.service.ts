@@ -31,10 +31,10 @@ export class ReviewService extends OntimizeEEService {
 
   updateUserReview(review_id: number, rating: number, review: string) {
     const filter = {
-      'REVIEW_ID': review_id
+      'review_id': review_id
     };
     const data = {
-      'REVIEW_ID': review_id,
+      'review_id': review_id,
       "VALUE": parseInt(String(rating)),
       "COMMENT": review,
       "REVIEW_DATE": new Date().getTime()
@@ -49,7 +49,7 @@ export class ReviewService extends OntimizeEEService {
 
   deleteUserReview(review_id: number) {
     const filter = {
-      'REVIEW_ID': review_id
+      'review_id': review_id
     };
     return this.delete(filter, 'review').pipe();
   }
