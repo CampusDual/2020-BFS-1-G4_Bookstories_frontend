@@ -10,7 +10,7 @@
                     fxFlex="100">
             </o-text-input>
         </o-column>
-        <div class="details-container" fxFlex="30">
+        <div class="details-container">
             <o-column>
                 <o-integer-input
                         class="input-padding display-none"
@@ -42,6 +42,7 @@
         <div class="content-row-flex">
             <o-column class="books-container" title="BOOKS">
                 <o-list #list
+
                         attr="authorbooks"
                         service="authors"
                         entity="authorbooks"
@@ -52,7 +53,7 @@
                         detail-form-route="/main/books">
 
                     <o-list-item *ngFor="let row of list.dataArray">
-                        <o-list-item-text class="bookc" layout-padding #item title="{{ row.BOOK_TITLE }}">
+                        <o-list-item-text class="bookc"  layout-padding #item title="{{ row.BOOK_TITLE }}">
                         </o-list-item-text>
                     </o-list-item>
                 </o-list>
