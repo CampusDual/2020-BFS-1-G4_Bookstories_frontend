@@ -29,11 +29,8 @@ export const routes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuardService],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {
-        path: 'home',
-        loadChildren: loadHomeModule
-      },
+      { path: '', redirectTo: 'books', pathMatch: 'full' },
+      
       {
         path: 'books',
         loadChildren: loadBooksModule
